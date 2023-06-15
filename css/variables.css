@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
+:root {
+    --background-main-color: #ededed;
+
+    --font-family-main-text: 'Nunito', sans-serif;
+    --font-family-accent-text: 'Poppins', sans-serif;
+
+    --font-color-main-text: rgb(72, 86, 102);
+    --font-color-accent-text: rgb(35, 61, 98);
+
+    --font-size-main-text: 20px;
+    --font-size-accent-text: 66px;
+    --font-size-module-name-mb: 23px;
+    --font-size-module-name: 45px;
+
+    --font-weight-main-text: 400;
+    --font-weight-accent-text: 600;
+
+    --letter-spacing-main-text: 0.2px;
+
+    --line-height-main-text: 32px;
+    --line-height-accent-text: 70px;
+    --line-height-module-name-mb: 33px;
+    --line-height-module-name: 55px;
+
+    --module-background-color: rgb(255, 255, 255);
+    --module-border-color: rgb(72, 86, 102);
+    --module-border-radius: 25px;
+    --module-border-width: 1px;
+    --module-border-box-shadow: 0px 13px 19px 0px #00000012;
+
+    --btn-font-size: 20px;
+    --btn-font-weight: 700;
+    --btn-border-radius: 0.5rem;
+}

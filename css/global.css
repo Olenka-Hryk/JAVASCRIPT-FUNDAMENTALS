@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    background: no-repeat url("../images/background-image.png");
+    background-size: cover;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 24px;
+    margin: auto;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        padding: 0;
+    }
+}
