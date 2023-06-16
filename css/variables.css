@@ -34,4 +34,15 @@
     --btn-font-size: 20px;
     --btn-font-weight: 700;
     --btn-border-radius: 0.5rem;
+
+    --btn-task-first-color: #37aee2;
+    --btn-task-second-color: #1e96c8;
+    --btn-task-hover-color: #1d95c9;
+    --btn-task-accent-color: #17759c;
+    --btn-task-focus-color: rgb(35, 61, 98);
+    
+    --btn-execute-text-color: #1d95c9;
+    --btn-execute-accent-color: #17759c;
+    --btn-execute-hover-color: #ffdf00;
+    --btn-execute-focus-color: #1dc959;
 }

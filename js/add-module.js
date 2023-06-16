@@ -6,14 +6,14 @@ function renderModules(modules) {
     html += `<div class="module__tasks-list">`;
 
     for (let task = 0; task < module.numberOfTasks; task++) {
-      html += `<button class="button button-tsk module__task-btn" id="${module.id}_task${task + 1}" 
+      html += `<button class="button button--tsk module__task-btn" id="${module.id}_task${task + 1}" 
                        data-chapter="${index}" data-task="${task}">Task ${task + 1}</button>`;
     }
 
     html += `</div><div class="module__task"> 
                <p class="accent-text module__task-name module__task-name-${module.id}"></p>
                <p class="main-text module__task-description module__task-description-${module.id}"></p>
-               <button class="button button-ex module__task-execute-btn module__task-execute-${module.id}" data-execution="${module.id}" data-execute="true">Execute</button>
+               <button class="button button--ex module__task-execute-btn module__task-execute-${module.id}" data-execution="${module.id}" data-execute="true">Execute</button>
             <div/></section>`;
   });
 

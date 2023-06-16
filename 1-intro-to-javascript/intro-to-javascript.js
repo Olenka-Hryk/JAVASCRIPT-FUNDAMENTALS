@@ -8,25 +8,26 @@ function executeModule1Task2() {
 
 // Task 3
 function executeModule1Task3() {
-        let firstValue = "Hello";
-        let secondValue = 404;
+        let firstValue = 404;
+        let secondValue = "Hellooooo";
         outputVariables(firstValue, secondValue);
         firstValue = secondValue;
         outputVariables(firstValue, secondValue);
 
         function outputVariables(valueFirst, valueSecond) {
-            setTimeout(function(){alert(`First value is: ${valueFirst} \nSecond value is: ${valueSecond}`)},100);
+            alert(`First value is: ${valueFirst} \nSecond value is: ${valueSecond}`);
         }
 }
 
 
 // Task 4
 function executeModule1Task4() {
+    let imNotExist;
         const dataTypes = {
             String: "SoftServe",
             Number: 2023,
             Boolean: true,
-            Undefined: undefined,
+            Undefined: imNotExist,
             Null: null,
         };
         // console.log(typeof dataTypes.Undefined === 'undefined');
@@ -90,10 +91,41 @@ function executeModule1Task6() {
 // Task 7
 function executeModule1Task7() {
         let login = prompt("Enter your login:", "User");
+        while (!isEmptySet(login)) {
+            login = prompt("You haven't entered your login!\nPlease, enter your login:");
+        }
+        login = findAnonymous(login, "login"); 
+        if (login === "anonymous") { 
+            alert("Dear anonymous, your email and password are unknown =("); 
+            return;
+        }
+
         let email = prompt("Enter your email:", "usermail@gmail.com");
+        while (!isDataSet(email)) {
+            email = prompt("You haven't entered your email!\nPlease, enter your email:");
+        }
+
         let password = prompt("Enter your password:", "qwerty");
+        while (!isDataSet(password)) {
+            password = prompt("You haven't entered your password!\nPlease, enter your password:");
+        }
 
         alert(`Dear ${login}, your email is ${email}, your password is ${password}`);
+
+        function isEmptySet(data){
+            return (data !== "");
+        }
+
+        function isDataSet(data){
+            return (data && data !== "");
+        }
+
+        function findAnonymous(data, name){
+            data === null ?
+               confirm("Do you want to remain anonymous?\nWould you like to correct this?\n Enter OK - to continue entering data.") ? 
+                (data = prompt(`Enter your ${name}:`, `${name}`)) :  (data = "anonymous") :  data;
+                return data;
+        }
 }
 
 
@@ -106,9 +138,20 @@ function executeModule1Task8() {
         isWantToCalculate ? calculateSecInData(secH, secD, secM) : null;
 
         function calculateSecInData(secH, secD, secM) {
-            let hour = prompt("Enter number of hours:", "3");
-            let day = prompt("Enter number of days:", "2");
-            let month = prompt("Enter number of month:", "4");
+            let hour = +prompt("Enter number of hours:", "3");
+            while(isNaN(hour)) {
+                hour = +prompt("It's not a number! Be careful!\nEnter number of hours:");
+            }
+
+            let day = +prompt("Enter number of days:", "2");
+            while(isNaN(day)) {
+                day = +prompt("It's not a number! Be careful!\nEnter number of days:");
+            }
+
+            let month = +prompt("Enter number of months:", "4");
+            while(isNaN(month)) {
+                month = +prompt("It's not a number! Be careful!\nEnter number of months:");
+            }
 
             alert(`The number of seconds in ${hour} hour is ${secH * hour}, in ${day} day - ${secD * day}, in ${month} month - ${secM * month}.`);
         }

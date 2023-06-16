@@ -34,37 +34,45 @@
     padding-bottom: 10px;
 }
 
-.button-tsk {
+.button--tsk {
     color: var(--module-background-color);
-    background-image: linear-gradient(-180deg, #37aee2 0%, #1e96c8 100%);
+    background-image: linear-gradient(-180deg, var(--btn-task-first-color) 0%, var(--btn-task-second-color) 100%);
 }
 
-.button-ex {
-    color: #1d95c9;
+.button--ex {
+    width: 100%;
+    color: var(--btn-execute-text-color);
     font-family: var(--font-family-accent-text);
 }
 
-.button-tsk:hover {
-    background-image: linear-gradient(-180deg, #1d95c9 0%, #17759c 100%);
+.button--tsk:hover {
+    background-image: linear-gradient(-180deg, var(--btn-task-hover-color) 0%, var(--btn-task-accent-color) 100%);
 }
 
-.button-ex:hover {
-    background-image: linear-gradient(-180deg, #ffdf00 0%, #ffdf00 100%);
+.button--tsk:focus {
+    background-image: linear-gradient(-180deg, var(--btn-task-focus-color) 0%, var(--btn-task-focus-color) 100%);
+}
+
+.button--ex:hover {
+    background-image: linear-gradient(-180deg, var(--btn-execute-hover-color) 0%, var(--btn-execute-hover-color) 100%);
     color: var(--font-color-accent-text);
 }
 
-.button-ex:focus{
-    background-image: linear-gradient(-180deg, #1dc959 0%, #1dc959 100%);
+.button--ex:focus{
+    background-image: linear-gradient(-180deg, var(--btn-execute-focus-color) 0%, var(--btn-execute-focus-color) 100%);
     color: var(--module-background-color);
 }
 
-.button-ex:focus::after {
+.button--ex:focus::after {
     content: "d!";
 }
 
-
 @media (min-width: 500px) {
     .button {
+        width: 200px;
+    }
+
+    .button--ex {
         width: 200px;
     }
 }
