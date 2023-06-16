@@ -49,7 +49,7 @@ const MODULES = [
         },
         {
           id: "8",
-          nameTask: "Count the seconds: ",
+          nameTask: "Counting seconds: ",
           descriptionTask:
             "Напишіть скріпт, який вираховує кількість секунд в годині, в добі, в місяці, записує результати в відповідні змінні, і виводить їх значення на екран.",
         },

@@ -138,21 +138,25 @@ function executeModule1Task8() {
         isWantToCalculate ? calculateSecInData(secH, secD, secM) : null;
 
         function calculateSecInData(secH, secD, secM) {
-            let hour = +prompt("Enter number of hours:", "3");
-            while(isNaN(hour)) {
-                hour = +prompt("It's not a number! Be careful!\nEnter number of hours:");
+            let hour = prompt("Enter number of hours:", "3");
+            while(isNumberSet(hour)) {
+                hour = prompt("It's not a number! Be careful!\nEnter number of hours:");
             }
 
-            let day = +prompt("Enter number of days:", "2");
-            while(isNaN(day)) {
-                day = +prompt("It's not a number! Be careful!\nEnter number of days:");
+            let day = prompt("Enter number of days:", "2");
+            while(isNumberSet(day)) {
+                day = prompt("It's not a number! Be careful!\nEnter number of days:");
             }
 
-            let month = +prompt("Enter number of months:", "4");
-            while(isNaN(month)) {
-                month = +prompt("It's not a number! Be careful!\nEnter number of months:");
+            let month = prompt("Enter number of months:", "4");
+            while(isNumberSet(month)) {
+                month = prompt("It's not a number! Be careful!\nEnter number of months:");
             }
 
             alert(`The number of seconds in ${hour} hour is ${secH * hour}, in ${day} day - ${secD * day}, in ${month} month - ${secM * month}.`);
+        }
+
+        function isNumberSet(data) {
+            return (isNaN(parseInt(data)));
         }
 }
