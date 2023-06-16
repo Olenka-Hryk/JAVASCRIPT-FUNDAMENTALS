@@ -47,6 +47,10 @@
     font-size: 20px;
 }
 
+.module__task-execute-btn {
+    margin-top: 25px;
+}
+
 @media (min-width: 500px) {
     .module__tasks-list {
         align-items: center;
