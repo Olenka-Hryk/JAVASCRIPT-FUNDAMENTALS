@@ -94,34 +94,42 @@ function executeModule1Task7() {
         const REGEXP_EMAIL = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
 
         let login = prompt("Enter your login:", "User");
-        while (isDataSet(login,REGEXP_LETTER_NUMBER)) {
-            login = prompt("You haven't entered your login!\nPlease, enter your login:");
-        }
         login = findAnonymous(login, "login"); 
+
         if (login === "anonymous") { 
             alert("Dear anonymous, your email and password are unknown =("); 
             return;
         }
+        
+        while (!isDataSet(login, REGEXP_LETTER_NUMBER)) {
+            login = prompt("You haven't entered your login!\nPlease, enter your login:");
+        }
 
         let email = prompt("Enter your email:", "usermail@gmail.com");
-        while (isDataSet(email,REGEXP_EMAIL)) {
+        while (!isDataSet(email, REGEXP_EMAIL)) {
             email = prompt("You haven't entered your email!\nPlease, enter your email:");
         }
 
         let password = prompt("Enter your password:", "qwerty");
-        while (isDataSet(password,REGEXP_LETTER_NUMBER)) {
+        while (!isDataSet(password, REGEXP_LETTER_NUMBER)) {
             password = prompt("You haven't entered your password!\nPlease, enter your password:");
         }
 
         alert(`Dear ${login}, your email is ${email}, your password is ${password}`);
 
-        function findAnonymous(data, name){
-            data ?? ( confirm("Do you want to remain anonymous?\nWould you like to correct this?\n Enter OK - to continue entering data.") ? data = prompt(`Enter your ${name}:`, `${name}`) :  data = "anonymous");
-                return data;
+        function findAnonymous(data, name) {
+            if (data === null) {
+                let isAnonymous = confirm("Do you want to remain anonymous?\nWould you like to correct this?\n Enter OK - to continue entering data.");
+                if (isAnonymous) {
+                    return prompt(`Enter your ${name}:`, `${name}`)
+                } else {
+                    return "anonymous";
+                }
+            } else return data;
         }
 
         function isDataSet(data, regExp) {
-            return (data && !data.match(regExp));
+            return (data && regExp.test(data));
         }
 }
 
@@ -136,17 +144,17 @@ function executeModule1Task8() {
 
         function calculateSecInData(secH, secD, secM) {
             let hour = prompt("Enter number of hours:", "3");
-            while(isNumberSet(hour)) {
+            while (!isNumberSet(hour)) {
                 hour = prompt("It's not a number! Be careful!\nEnter number of hours:");
             }
 
             let day = prompt("Enter number of days:", "2");
-            while(isNumberSet(day)) {
+            while (!isNumberSet(day)) {
                 day = prompt("It's not a number! Be careful!\nEnter number of days:");
             }
 
             let month = prompt("Enter number of months:", "4");
-            while(isNumberSet(month)) {
+            while (!isNumberSet(month)) {
                 month = prompt("It's not a number! Be careful!\nEnter number of months:");
             }
 
@@ -154,6 +162,6 @@ function executeModule1Task8() {
         }
 
         function isNumberSet(data) {
-            return (isNaN(parseInt(data)));
+            return data !== null && !!String(data).trim() && !isNaN(data);
         }
 }
