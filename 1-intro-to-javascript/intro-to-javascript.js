@@ -90,8 +90,11 @@ function executeModule1Task6() {
 
 // Task 7
 function executeModule1Task7() {
+        const REGEXP_LETTER_NUMBER = /^[a-zA-Z\d]+$/;
+        const REGEXP_EMAIL = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+
         let login = prompt("Enter your login:", "User");
-        while (!isEmptySet(login)) {
+        while (isDataSet(login,REGEXP_LETTER_NUMBER)) {
             login = prompt("You haven't entered your login!\nPlease, enter your login:");
         }
         login = findAnonymous(login, "login"); 
@@ -101,29 +104,24 @@ function executeModule1Task7() {
         }
 
         let email = prompt("Enter your email:", "usermail@gmail.com");
-        while (!isDataSet(email)) {
+        while (isDataSet(email,REGEXP_EMAIL)) {
             email = prompt("You haven't entered your email!\nPlease, enter your email:");
         }
 
         let password = prompt("Enter your password:", "qwerty");
-        while (!isDataSet(password)) {
+        while (isDataSet(password,REGEXP_LETTER_NUMBER)) {
             password = prompt("You haven't entered your password!\nPlease, enter your password:");
         }
 
         alert(`Dear ${login}, your email is ${email}, your password is ${password}`);
 
-        function isEmptySet(data){
-            return (data !== "");
-        }
-
-        function isDataSet(data){
-            return (data && data !== "");
-        }
-
         function findAnonymous(data, name){
-            confirm(data ?? "Do you want to remain anonymous?\nWould you like to correct this?\n Enter OK - to continue entering data.") 
-            ? data = prompt(`Enter your ${name}:`, `${name}`) :  data = "anonymous";
+            data ?? ( confirm("Do you want to remain anonymous?\nWould you like to correct this?\n Enter OK - to continue entering data.") ? data = prompt(`Enter your ${name}:`, `${name}`) :  data = "anonymous");
                 return data;
+        }
+
+        function isDataSet(data, regExp) {
+            return (data && !data.match(regExp));
         }
 }
 
