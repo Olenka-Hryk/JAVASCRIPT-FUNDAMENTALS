@@ -121,9 +121,8 @@ function executeModule1Task7() {
         }
 
         function findAnonymous(data, name){
-            data === null ?
-               confirm("Do you want to remain anonymous?\nWould you like to correct this?\n Enter OK - to continue entering data.") ? 
-                (data = prompt(`Enter your ${name}:`, `${name}`)) :  (data = "anonymous") :  data;
+            confirm(data ?? "Do you want to remain anonymous?\nWould you like to correct this?\n Enter OK - to continue entering data.") 
+            ? data = prompt(`Enter your ${name}:`, `${name}`) :  data = "anonymous";
                 return data;
         }
 }
