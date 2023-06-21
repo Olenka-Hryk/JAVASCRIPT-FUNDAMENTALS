@@ -65,6 +65,7 @@ function closeAllTasks() {
 }
 
 function hideAllExecuteBtn(){
+  document.getElementById("modal-btn-execute").style.display = "none";
   let executeBtn = document.querySelectorAll(`.module__task-execute-btn`);
   executeBtn.forEach((btn) => {
     btn.style.display = "none";
