@@ -2,7 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
 :root {
-    --background-main-color: #ededed;
+    --modal-background-color: rgba(0, 0, 0, 0.4);
+    --modal-inner-background-color: #f0f5fd;
+    --modal-border-radius: 15px;
+    --modal-border: 3px solid rgb(72, 86, 102);
+    --modal-span-close-btn-color: #aaaaaa;
+    --modal-span-close-btn-active-color: rgb(35, 61, 98);
+    --modal-span-close-btn-font-size: 28px;
+    --modal-name-font-size: 20px;
+    --modal-form-background-color: rgb(255, 255, 255);
+    --modal-form-input-font-size: 17px;
+    --modal-form-input-line-height: 25px;
+    --modal-form-input-letter-spacing: 0.1px;
+    --modal-form-input-border-radius: 5px;
+    --modal-form-input-border: 1px solid #1d95c9;
+    --modal-form-input-box-shadow: 0.2rem 0.8rem 1.6rem rgba(35, 61, 98, 0.06);
+    --modal-form-result-task-color: #37aee2;
+    --modal-form-result-total-font-size: 22px;
 
     --font-family-main-text: 'Nunito', sans-serif;
     --font-family-accent-text: 'Poppins', sans-serif;
@@ -40,7 +56,7 @@
     --btn-task-hover-color: #1d95c9;
     --btn-task-accent-color: #17759c;
     --btn-task-focus-color: rgb(35, 61, 98);
-    
+
     --btn-execute-text-color: #1d95c9;
     --btn-execute-accent-color: #17759c;
     --btn-execute-hover-color: #ffdf00;

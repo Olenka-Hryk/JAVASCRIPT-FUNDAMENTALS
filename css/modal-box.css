@@ -1,0 +1,95 @@
+
+.modal {
+    display: none;
+    overflow: auto;
+    position: fixed;
+    z-index: 1;
+    padding-top: 150px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-background-color);
+}
+
+.modal__container {
+    background-color: var(--modal-inner-background-color);
+    border-radius: var(--modal-border-radius);
+    border: var(--modal-border);
+    margin: auto;
+    padding: 5px 1em 100px 1em;
+    width: 80%;
+    max-width: 800px;
+}
+
+.modal__close {
+    color: var(--modal-span-close-btn-color);
+    float: right;
+    font-size: var(--modal-span-close-btn-font-size);
+    font-weight: bold;
+}
+
+.modal__close:hover,
+.modal__close:focus {
+    color: var(--modal-span-close-btn-active-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal__name {
+    padding-top: 30px;
+    text-align: center;
+    font-size: var(--modal-name-font-size);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__content {
+    padding: 25px 1em 0px 1em;
+}
+
+.form__label {
+    padding-left: 2px;
+    padding-top: 20px;
+}
+
+.form__input {
+    background-color: var(--modal-form-background-color);
+    font-size: var(--modal-form-input-font-size);
+    line-height: var(--modal-form-input-line-height);
+    letter-spacing: var(--modal-form-input-letter-spacing);
+    padding-left: 5px;
+    outline: none;
+    border-style: none;
+    border-radius: var(--modal-form-input-border-radius);
+}
+
+.form__input:focus {
+    border: var(--modal-form-input-border);
+    box-shadow: var(--modal-form-input-box-shadow);
+}
+
+.form__result {
+    font-size: var(--modal-form-input-font-size);
+    line-height: var(--modal-form-input-line-height);
+}
+
+.form__result--task {
+    padding: 5px 1em 20px 1em;
+    color: var(--modal-form-result-task-color);
+}
+
+.form__result--total {
+    padding-top: 20px;
+    text-align: center;
+    font-size: var(--modal-form-result-total-font-size);
+}
+
+@media (min-width: 500px) {
+    .modal__content {
+        padding: 25px 15% 0px 15%;
+    }
+}

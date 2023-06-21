@@ -21,7 +21,7 @@ function renderModules(modules) {
   module.innerHTML = html;
   hideAllExecuteBtn();
   
-  document.addEventListener("click", (event) => {
+  document.querySelector('.modules__list').addEventListener("click", (event) => {
     closeAllTasks(); 
     if (event.target.tagName !== "BUTTON") { hideAllExecuteBtn(); return; }
 

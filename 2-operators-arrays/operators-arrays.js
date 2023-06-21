@@ -153,12 +153,293 @@ function executeModule2Task5() {
 
 // Task 6
 function executeModule2Task6() {
-  alert("The script will be here soooooon");
+  document.getElementById("modal").style.display = "block";
+  document.querySelector(".modal__name").innerHTML = "The most common number in the array:";
+  let btnExecute = document.getElementById("modal-btn-execute");
+  btnExecute.style.display = "block";
+  const container = document.querySelector(".modal__content");
+
+  renderDomModalElements();
+  renderFieldForResult();
+  let fieldForResult = document.getElementById("result");
+
+  function renderDomModalElements() {
+    const listDomModalElement = [
+      {
+        element: "label",
+        for: "input-array",
+        classList: "",
+        text: "Enter an array of numbers:"
+      },
+      {
+        element: "input",
+        id: "input-array",
+        placeholder: "[4, 5, 2, 1, 6, 5, 3, 5, 2, 5]",
+        classList: "",
+        type: "text"
+      }
+    ];
+    showFormElements(listDomModalElement, container);
+  }
+
+  function renderFieldForResult() {
+    document.querySelectorAll("#result").forEach(e => e.remove());
+    const resultDomElement = [
+      {
+        element: "p",
+        id: "result",
+        classList: "",
+        text: ""
+      },
+    ];
+    showFormElements(resultDomElement, container);
+  }
+
+  btnExecute.addEventListener("click", () => {
+    let inputArray = document.getElementById("input-array").value;
+    // let arr = [4, 5, 2, 1, 6, 5, 3, 5, 2, 5];
+
+    let arr = inputArray.split(/[.,; ]/);
+    arr = arr.filter((element) => {
+      return /\S/.test(element);
+    });
+
+    const frequencyElement = arr.reduce((acc, elem) => {
+      acc[elem] = !acc[elem] ? 1 : acc[elem] + 1;
+      return acc;
+    }, {});
+
+    const entries = Object.entries(frequencyElement);
+    let maxEntry = entries[0];
+    for (const entry of entries) {
+      if (entry[1] > maxEntry[1]) maxEntry = entry;
+    }
+
+    let data = [maxEntry[0]];
+    arr = arr.filter((elem) => elem !== maxEntry[0]);
+    console.log(arr);
+
+    fieldForResult.innerText = `Result: most common element is ${data};\n New array: [ ${arr} ]`;
+  });
 }
 
 
 
 // Task 7
 function executeModule2Task7() {
-  alert("The script will be here soooooon");
+  document.getElementById("modal").style.display = "block";
+  document.querySelector(".modal__name").innerHTML = "&#10025; &#10025; &#10025; Vasya Vasylyok";
+  const container = document.querySelector(".modal__content");
+  renderListTask();
+
+  function renderListTask() {
+    const listDomTaskElement = [
+      {
+        element: "button",
+        id: "task-num-line-code",
+        classList: "button--form-tsk",
+        text: "Required number of lines of code",
+        onclick: () => { renderTaskLineCode() }
+      },
+      {
+        element: "button",
+        id: "task-num-delays",
+        classList: "button--form-tsk",
+        text: "Permissible number of delays",
+        onclick: () => { renderTaskDelays() }
+      },
+      {
+        element: "button",
+        id: "task-income",
+        classList: "button--form-tsk",
+        text: "Estimated income",
+        onclick: () => { renderTaskIncome() }
+      }
+    ];
+    showFormElements(listDomTaskElement, container);
+  }
+
+  function renderTaskLineCode() {
+    clearDomForModal();
+    document.getElementById("task-num-line-code").classList = "button button--form-tsk button--form-tsk-select";
+    const listDomElement = [
+      {
+        element: "label",
+        for: "income-desired",
+        classList: "",
+        text: "Desired income:"
+      },
+      {
+        element: "input",
+        id: "income-desired",
+        placeholder: "2000$",
+        classList: "",
+        type: "number"
+      },
+      {
+        element: "label",
+        for: "delays",
+        classList: "",
+        text: "The number of delays:"
+      },
+      {
+        element: "input",
+        id: "delays",
+        placeholder: "3",
+        classList: "",
+        type: "number"
+      },
+      {
+        element: "button",
+        id: "execute-task-income",
+        classList: "button--form-ex",
+        text: "Execute",
+        onclick: () => { calculateReqNumLineCode() }
+      }
+    ];
+    showFormElements(listDomElement, container);
+  }
+
+  function renderTaskDelays() {
+    clearDomForModal();
+    document.getElementById("task-num-delays").classList = "button button--form-tsk button--form-tsk-select";
+    const listDomElement = [
+      {
+        element: "label",
+        for: "lines-code",
+        classList: "",
+        text: "The number of lines of code:"
+      },
+      {
+        element: "input",
+        id: "lines-code",
+        placeholder: "658",
+        classList: "",
+        type: "number"
+      },
+      {
+        element: "label",
+        for: "income-desired",
+        classList: "",
+        text: "Desired income:"
+      },
+      {
+        element: "input",
+        id: "income-desired",
+        placeholder: "2000$",
+        classList: "",
+        type: "number"
+      },
+      {
+        element: "button",
+        id: "execute-task-delays",
+        classList: "button--form-ex",
+        text: "Execute",
+        onclick: () => { calculateAllowDelays() }
+      }
+    ];
+    showFormElements(listDomElement, container);
+  }
+
+  function renderTaskIncome() {
+    clearDomForModal();
+    document.getElementById("task-income").classList = "button button--form-tsk button--form-tsk-select";
+    const listDomElement = [
+      {
+        element: "label",
+        for: "lines-code",
+        classList: "",
+        text: "The number of lines of code:"
+      },
+      {
+        element: "input",
+        id: "lines-code",
+        placeholder: "658",
+        classList: "",
+        type: "number"
+      },
+      {
+        element: "label",
+        for: "delays",
+        classList: "",
+        text: "The number of delays:"
+      },
+      {
+        element: "input",
+        id: "delays",
+        placeholder: "4",
+        classList: "",
+        type: "number"
+      },
+      {
+        element: "button",
+        id: "execute-task-income",
+        classList: "button--form-ex",
+        text: "Execute",
+        onclick: () => { calculateEstimatedIncome() }
+      }
+    ];
+    showFormElements(listDomElement, container);
+  }
+
+  function renderFieldForResult() {
+    document.querySelectorAll("#result").forEach(e => e.remove());
+    const resultDomElement = [
+      {
+        element: "p",
+        id: "result",
+        classList: "",
+        text: "Result: "
+      },
+    ];
+    showFormElements(resultDomElement, container);
+  }
+
+  function clearDomForModal() {
+    container.innerHTML = "";
+    renderListTask();
+  }
+
+
+
+  const OFFER_LINES_CODE = 100;
+  const PRICE_PER_OFFER_LINES_CODE = 50;
+  const OFFER_QUANTITY_DELAY = 3;
+  const FORFEIT_PER_OFFER_DELAY = 20;
+
+  function calculateReqNumLineCode() {
+    renderFieldForResult();
+    let fieldForResult = document.getElementById("result");
+    let desiredIncome = +document.getElementById("income-desired").value;
+    let numberOfDelays = +document.getElementById("delays").value;
+
+    let sumOfWithdraw = Math.trunc(numberOfDelays / OFFER_QUANTITY_DELAY) * FORFEIT_PER_OFFER_DELAY;
+    let numOfReqLineCode = Math.ceil((desiredIncome + sumOfWithdraw) / PRICE_PER_OFFER_LINES_CODE) * OFFER_LINES_CODE;
+    fieldForResult.innerText = "Result: " + numOfReqLineCode + "  lines code";
+  }
+
+  function calculateAllowDelays() {
+    renderFieldForResult();
+    let fieldForResult = document.getElementById("result");
+    let numberOfLinesCode = +document.getElementById("lines-code").value;
+    let desiredIncome = +document.getElementById("income-desired").value;
+
+    let sumReceivedFromLineCode = Math.trunc(numberOfLinesCode / OFFER_LINES_CODE) * PRICE_PER_OFFER_LINES_CODE;
+    let numOfAllowedDelay = Math.trunc((sumReceivedFromLineCode - desiredIncome) / FORFEIT_PER_OFFER_DELAY) + 2;
+    numOfAllowedDelay > 0 ? fieldForResult.innerText = "Result: " + numOfAllowedDelay + "  delays" :
+      fieldForResult.innerText = "Result: not allowed delays!";
+  }
+
+  function calculateEstimatedIncome() {
+    renderFieldForResult();
+    let fieldForResult = document.getElementById("result");
+    let numberOfLinesCode = +document.getElementById("lines-code").value;
+    let numberOfDelays = +document.getElementById("delays").value;
+
+    let sumReceivedFromLineCode = Math.trunc(numberOfLinesCode / OFFER_LINES_CODE) * PRICE_PER_OFFER_LINES_CODE;
+    let sumOfWithdraw = Math.trunc(numberOfDelays / OFFER_QUANTITY_DELAY) * FORFEIT_PER_OFFER_DELAY;
+    let desiredIncome = sumReceivedFromLineCode - sumOfWithdraw;
+    desiredIncome > 0 ? fieldForResult.innerText = "Result: " + desiredIncome + "  $" :
+      fieldForResult.innerText = "Result: no work - no money!";
+  }
 }
