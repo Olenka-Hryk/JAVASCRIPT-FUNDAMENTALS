@@ -160,5 +160,43 @@ const MODULES = [
             "Створити функцію <code>create()</code>, яка приймає один аргумент <var>у</var> вигляді рядка. Ця функція повертає анонімну функцію, яка перевіряє чи переданий в неї аргумент збігається з аргументом зовнішньої функції ( потребує використання <var>closure</var> ). <br> <samp>const tom = create('pass_for_Tom'); <br>tom('pass_for_Tom'); //повертає true <br> tom('pass_for_tom'); //повертає false</samp>",
         }
       ],
+    },
+    {
+      id: "debugging-exceptions",
+      chapter: "4",
+      name: "4. DEBUGGING. HANDLING EXCEPTIONS",
+      numberOfTasks: "5",
+      tasks: [
+        {
+          id: "1",
+          nameTask: "The sum of two array elements: ",
+          descriptionTask:
+            "Напишіть функцію <code>sumSliceArray(arr, first, second)</code>, яка приймає масив <code>arr</code> і два числа (<code>first</code> i <code>second</code>) – порядкові номери елементів масиву, які необхідно скласти. Наприклад, якщо ввели 3 та 5 – сумуються 3-й та 5-й елементи. Функція повинна генерувати винятки, якщо були введені не числа, і коли одне з чисел або обидва більшого розміру за довжину масиву. Напишіть код, який використовує цю функцію, передбачте обробку можливих винятків.",
+        },
+        {
+          id: "2",
+          nameTask: "Do you have access to watch the movie? ",
+          descriptionTask:
+            "Створіть функцію <code>checkAge()</code>, яка запитує у користувача його <var>ім'я, вік</var> та <var>статус</var> ( <var>адмін, модератор, користувач</var> ) та генерує модальне вікно з помилкою, якщо: <br>&#9900; вік користувача менше 18 або більше 70 років (генерується помилка типу <code>RangeError</code>). <br>&#9900; користувач не ввів жодних даних в будь-якому полі (виводиться повідомлення <var>The field is empty! Please enter your age</var> з типом помилки <code>Error</code>). <br>&#9900; у полі статус введено неправильне слово (тип помилки <code>EvalError</code>). <br>&#9900; в полі вік введено нечислове значення. <br> У всіх інших випадках користувач отримає доступ до перегляду фільму. <br>У блоці <code>catch</code> передбачена можливість виведення <var>назви</var> та <var>опису помилки</var>.",
+        },
+        {
+          id: "3",
+          nameTask: "Find the area of the rectangle: ",
+          descriptionTask:
+            "Реалізуйте функцію <code>calcRectangleArea(width, height)</code>, яка приймає 2 параметри <var>ширина</var> прямокутника <code>width</code> і <var>висота</var> прямокутника <code>height</code> і обраховує його площу. Передбачити припинення виконання програми і генерацію винятку у випадку, якщо функції передано не числові параметри. Напишіть код, який використовує цю функцію та обробляє можливі виняткові ситуації.",
+        },
+        {
+          id: "4",
+          nameTask: "Month Exception: ",
+          descriptionTask:
+            "Створіть клас <code>MonthException</code>, конструктор якого приймає параметр <code>message</code> і ініціалізує поле <code>name</code> значенням <code>MonthException</code>. Реалізуйте функцію <code>showMonthName(month)</code>, в якій параметр <code>month</code> – це порядковий номер місяця в році. Функція повертає назву місяця відповідно до введеного номера місяця. У випадку некоректного вводу кидається ексепшн у вигляді об’єкта класу <code>MonthException</code> з повідомленням <var>Incorrect month number</var>.  Напишіть код, який використовує цю функцію, передбачте обробку можливих винятків. <br>Приклад роботи програми: <br><samp>console.log(showMonthName(5));  // May <br>console.log(showMonthName(14)); // MonthException Incorrect month number</samp>",
+        },
+        {
+          id: "5",
+          nameTask: "Show user id: ",
+          descriptionTask:
+            "Реалізуйте функцію <code>showUser(id)</code>, яка приймає параметром користувацьке <code>id</code> і повертає об’єкт, який містить значення переданої <code>id</code>. Також функція викидає помилку у разі якщо введено від’ємне <code>id</code>. <br>Реалізуйте функцію <code>showUsers(ids)</code>, яка приймає параметром масив користувацьких айді <code>ids</code>, перевіряє з використанням функції <code>showUser()</code> кожен елемент масиву <code>ids</code> на коректність, в разі виключної ситуації виводить повідомлення про помилку. Функція <code>showUsers(ids)</code> повертає масив об’єктів, де значеннями ключів є коректні елементи <code>ids</code>. <br>Приклад роботи програми: <br><samp>showUsers([7, -12, 44, 22]);<br>// Error: ID must not be negative: -12 <br>// [ {id: 7}, {id: 44}, {id: 22} ]</samp>",
+        }
+      ],
     }
   ];
