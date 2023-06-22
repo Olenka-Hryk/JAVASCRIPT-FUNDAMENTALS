@@ -153,6 +153,9 @@ function executeModule2Task5() {
 
 // Task 6
 function executeModule2Task6() {
+  const REGEXP_WHITESPACE = /\S/;
+  const REGEXP_LETTERS = /[A-Za-z]/;
+
   document.getElementById("modal").style.display = "block";
   document.querySelector(".modal__name").innerHTML = "The most common number in the array:";
   let btnExecute = document.getElementById("modal-btn-execute");
@@ -200,9 +203,20 @@ function executeModule2Task6() {
     // let arr = [4, 5, 2, 1, 6, 5, 3, 5, 2, 5];
 
     let arr = inputArray.split(/[.,; ]/);
-    arr = arr.filter((element) => {
-      return /\S/.test(element);
-    });
+
+    if (arr.some(e => REGEXP_LETTERS.test(e))) {
+      alert("WARNING:\nYour input array has some letters! I will remove them!");
+      arr = arr.filter((element) => {
+        return !REGEXP_LETTERS.test(element) && REGEXP_WHITESPACE.test(element);
+      });
+      fieldForResult.innerText = `Original array: [${arr}]\n`;
+    } else {
+      arr = arr.filter((element) => {
+        return REGEXP_WHITESPACE.test(element);
+      });
+    }
+
+    arr = arr.map(Number);
 
     const frequencyElement = arr.reduce((acc, elem) => {
       acc[elem] = !acc[elem] ? 1 : acc[elem] + 1;
@@ -215,11 +229,14 @@ function executeModule2Task6() {
       if (entry[1] > maxEntry[1]) maxEntry = entry;
     }
 
-    let data = [maxEntry[0]];
-    arr = arr.filter((elem) => elem !== maxEntry[0]);
-    console.log(arr);
+    if (maxEntry[1] === 1) {
+      fieldForResult.innerText += "Result: all elements of your input array are unique!";
+    } else {
+      let data = [maxEntry[0]];
+      arr = arr.filter((elem) => elem !== +maxEntry[0]);
 
-    fieldForResult.innerText = `Result: most common element is ${data};\n New array: [ ${arr} ]`;
+      fieldForResult.innerText += `Result: most common element is ${data};\n New array: [ ${arr} ]`;
+    }
   });
 }
 
@@ -405,6 +422,7 @@ function executeModule2Task7() {
   const OFFER_LINES_CODE = 100;
   const PRICE_PER_OFFER_LINES_CODE = 50;
   const OFFER_QUANTITY_DELAY = 3;
+  const ALLOWED_DELAY_WITHOUT_FORFEIT = OFFER_QUANTITY_DELAY - 1;
   const FORFEIT_PER_OFFER_DELAY = 20;
 
   function calculateReqNumLineCode() {
@@ -425,7 +443,7 @@ function executeModule2Task7() {
     let desiredIncome = +document.getElementById("income-desired").value;
 
     let sumReceivedFromLineCode = Math.trunc(numberOfLinesCode / OFFER_LINES_CODE) * PRICE_PER_OFFER_LINES_CODE;
-    let numOfAllowedDelay = Math.trunc((sumReceivedFromLineCode - desiredIncome) / FORFEIT_PER_OFFER_DELAY) + 2;
+    let numOfAllowedDelay = Math.trunc((sumReceivedFromLineCode - desiredIncome) / FORFEIT_PER_OFFER_DELAY) + ALLOWED_DELAY_WITHOUT_FORFEIT;
     numOfAllowedDelay > 0 ? fieldForResult.innerText = "Result: " + numOfAllowedDelay + "  delays" :
       fieldForResult.innerText = "Result: not allowed delays!";
   }
