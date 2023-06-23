@@ -1,8 +1,8 @@
 // Task 1
 function executeModule2Task1() {
-  let a = +enterValue("a");
-  let b = +enterValue("b");
-  let c = +enterValue("c");
+  const a = +enterValue("a");
+  const b = +enterValue("b");
+  const c = +enterValue("c");
 
   (a < b && b < c) ? outputResult(true, a, b, c) : outputResult(false, a, b, c);
 
@@ -78,11 +78,11 @@ function executeModule2Task3() {
 // Task 4
 function executeModule2Task4() {
   const REGEXP_ONLY_NUMBER = /^[0-9]+$/;
-  let aSideTri = +enterSideTriangle("A");
-  let bSideTri = +enterSideTriangle("B");
-  let cSideTri = +enterSideTriangle("C");
+  const aSideTri = +enterSideTriangle("A");
+  const bSideTri = +enterSideTriangle("B");
+  const cSideTri = +enterSideTriangle("C");
 
-  let isCorrectSide = isExistTriangle(aSideTri, bSideTri, cSideTri);
+  const isCorrectSide = isExistTriangle(aSideTri, bSideTri, cSideTri);
   if (isCorrectSide) {
     console.log(findAreaTriangle(aSideTri, bSideTri, cSideTri));
     console.log(isRightTriangle(aSideTri, bSideTri, cSideTri));
@@ -128,7 +128,7 @@ function executeModule2Task4() {
 
 // Task 5
 function executeModule2Task5() {
-  let currentHour = new Date().getHours();
+  const currentHour = new Date().getHours();
 
   showGreetingsFirstWay(currentHour);
   showGreetingsSecondWay(currentHour);
@@ -165,20 +165,20 @@ function executeModule2Task6() {
     const listDomModalElement = [
       {
         element: "label",
-        for: "input-array",
+        for: "input-array-module2-task6",
         classList: "",
         text: "Enter an array of numbers:"
       },
       {
         element: "input",
-        id: "input-array",
+        id: "input-array-module2-task6",
         placeholder: "[4, 5, 2, 1, 6, 5, 3, 5, 2, 5]",
         classList: "",
         type: "text"
       },
       {
         element: "button",
-        id: "execute-frequent-number",
+        id: "execute-module2-task6",
         classList: "button--form-ex",
         text: "Execute",
         onclick: () => { onclickModalExecuteModule2Task6() }
@@ -204,7 +204,7 @@ function executeModule2Task6() {
     renderFieldForResult();
     const fieldForResult = document.getElementById("result");
 
-    let inputArray = document.getElementById("input-array").value;
+    const inputArray = document.getElementById("input-array-module2-task6").value;
     // let arr = [4, 5, 2, 1, 6, 5, 3, 5, 2, 5];
 
     let arr = parseInputToArrayOfNumbers(inputArray);
@@ -267,21 +267,21 @@ function executeModule2Task7() {
     const listDomTaskElement = [
       {
         element: "button",
-        id: "task-num-line-code",
+        id: "task-num-line-code-module2-task7",
         classList: "button--form-tsk",
         text: "Required number of lines of code",
         onclick: () => { renderTaskLineCode() }
       },
       {
         element: "button",
-        id: "task-num-delays",
+        id: "task-num-delays-module2-task7",
         classList: "button--form-tsk",
         text: "Permissible number of delays",
         onclick: () => { renderTaskDelays() }
       },
       {
         element: "button",
-        id: "task-income",
+        id: "task-income-module2-task7",
         classList: "button--form-tsk",
         text: "Estimated income",
         onclick: () => { renderTaskIncome() }
@@ -292,37 +292,37 @@ function executeModule2Task7() {
 
   function renderTaskLineCode() {
     clearDomForModal();
-    document.getElementById("task-num-line-code").classList = "button button--form-tsk button--form-tsk-select";
+    document.getElementById("task-num-line-code-module2-task7").classList = "button button--form-tsk button--form-tsk-select";
     const listDomElement = [
       {
         element: "label",
-        for: "income-desired",
+        for: "income-desired-module2-task7",
         classList: "",
         text: "Desired income:"
       },
       {
         element: "input",
-        id: "income-desired",
+        id: "income-desired-module2-task7",
         placeholder: "2000$",
         classList: "",
         type: "number"
       },
       {
         element: "label",
-        for: "delays",
+        for: "delays-module2-task7",
         classList: "",
         text: "The number of delays:"
       },
       {
         element: "input",
-        id: "delays",
+        id: "delays-module2-task7",
         placeholder: "3",
         classList: "",
         type: "number"
       },
       {
         element: "button",
-        id: "execute-task-income",
+        id: "execute-task-income-module2-task7",
         classList: "button--form-ex",
         text: "Execute",
         onclick: () => { calculateReqNumLineCode() }
@@ -333,37 +333,37 @@ function executeModule2Task7() {
 
   function renderTaskDelays() {
     clearDomForModal();
-    document.getElementById("task-num-delays").classList = "button button--form-tsk button--form-tsk-select";
+    document.getElementById("task-num-delays-module2-task7").classList = "button button--form-tsk button--form-tsk-select";
     const listDomElement = [
       {
         element: "label",
-        for: "lines-code",
+        for: "lines-code-module2-task7",
         classList: "",
         text: "The number of lines of code:"
       },
       {
         element: "input",
-        id: "lines-code",
+        id: "lines-code-module2-task7",
         placeholder: "658",
         classList: "",
         type: "number"
       },
       {
         element: "label",
-        for: "income-desired",
+        for: "income-desired-module2-task7",
         classList: "",
         text: "Desired income:"
       },
       {
         element: "input",
-        id: "income-desired",
+        id: "income-desired-module2-task7",
         placeholder: "2000$",
         classList: "",
         type: "number"
       },
       {
         element: "button",
-        id: "execute-task-delays",
+        id: "execute-task-delays-module2-task7",
         classList: "button--form-ex",
         text: "Execute",
         onclick: () => { calculateAllowDelays() }
@@ -374,37 +374,37 @@ function executeModule2Task7() {
 
   function renderTaskIncome() {
     clearDomForModal();
-    document.getElementById("task-income").classList = "button button--form-tsk button--form-tsk-select";
+    document.getElementById("task-income-module2-task7").classList = "button button--form-tsk button--form-tsk-select";
     const listDomElement = [
       {
         element: "label",
-        for: "lines-code",
+        for: "lines-code-module2-task7",
         classList: "",
         text: "The number of lines of code:"
       },
       {
         element: "input",
-        id: "lines-code",
+        id: "lines-code-module2-task7",
         placeholder: "658",
         classList: "",
         type: "number"
       },
       {
         element: "label",
-        for: "delays",
+        for: "delays-module2-task7",
         classList: "",
         text: "The number of delays:"
       },
       {
         element: "input",
-        id: "delays",
+        id: "delays-module2-task7",
         placeholder: "4",
         classList: "",
         type: "number"
       },
       {
         element: "button",
-        id: "execute-task-income",
+        id: "execute-task-income-module2-task7",
         classList: "button--form-ex",
         text: "Execute",
         onclick: () => { calculateEstimatedIncome() }
@@ -441,36 +441,36 @@ function executeModule2Task7() {
 
   function calculateReqNumLineCode() {
     renderFieldForResult();
-    let fieldForResult = document.getElementById("result");
-    let desiredIncome = +document.getElementById("income-desired").value;
-    let numberOfDelays = +document.getElementById("delays").value;
+    const fieldForResult = document.getElementById("result");
+    const desiredIncome = +document.getElementById("income-desired-module2-task7").value;
+    const numberOfDelays = +document.getElementById("delays-module2-task7").value;
 
-    let sumOfWithdraw = Math.trunc(numberOfDelays / OFFER_QUANTITY_DELAY) * FORFEIT_PER_OFFER_DELAY;
-    let numOfReqLineCode = Math.ceil((desiredIncome + sumOfWithdraw) / PRICE_PER_OFFER_LINES_CODE) * OFFER_LINES_CODE;
+    const sumOfWithdraw = Math.trunc(numberOfDelays / OFFER_QUANTITY_DELAY) * FORFEIT_PER_OFFER_DELAY;
+    const numOfReqLineCode = Math.ceil((desiredIncome + sumOfWithdraw) / PRICE_PER_OFFER_LINES_CODE) * OFFER_LINES_CODE;
     fieldForResult.innerText = "Result: " + numOfReqLineCode + "  lines code";
   }
 
   function calculateAllowDelays() {
     renderFieldForResult();
-    let fieldForResult = document.getElementById("result");
-    let numberOfLinesCode = +document.getElementById("lines-code").value;
-    let desiredIncome = +document.getElementById("income-desired").value;
+    const fieldForResult = document.getElementById("result");
+    const numberOfLinesCode = +document.getElementById("lines-code-module2-task7").value;
+    const desiredIncome = +document.getElementById("income-desired-module2-task7").value;
 
-    let sumReceivedFromLineCode = Math.trunc(numberOfLinesCode / OFFER_LINES_CODE) * PRICE_PER_OFFER_LINES_CODE;
-    let numOfAllowedDelay = Math.trunc((sumReceivedFromLineCode - desiredIncome) / FORFEIT_PER_OFFER_DELAY) + ALLOWED_DELAY_WITHOUT_FORFEIT;
+    const sumReceivedFromLineCode = Math.trunc(numberOfLinesCode / OFFER_LINES_CODE) * PRICE_PER_OFFER_LINES_CODE;
+    const numOfAllowedDelay = Math.trunc((sumReceivedFromLineCode - desiredIncome) / FORFEIT_PER_OFFER_DELAY) + ALLOWED_DELAY_WITHOUT_FORFEIT;
     numOfAllowedDelay > 0 ? fieldForResult.innerText = "Result: " + numOfAllowedDelay + "  delays" :
       fieldForResult.innerText = "Result: not allowed delays!";
   }
 
   function calculateEstimatedIncome() {
     renderFieldForResult();
-    let fieldForResult = document.getElementById("result");
-    let numberOfLinesCode = +document.getElementById("lines-code").value;
-    let numberOfDelays = +document.getElementById("delays").value;
+    const fieldForResult = document.getElementById("result");
+    const numberOfLinesCode = +document.getElementById("lines-code-module2-task7").value;
+    const numberOfDelays = +document.getElementById("delays-module2-task7").value;
 
-    let sumReceivedFromLineCode = Math.trunc(numberOfLinesCode / OFFER_LINES_CODE) * PRICE_PER_OFFER_LINES_CODE;
-    let sumOfWithdraw = Math.trunc(numberOfDelays / OFFER_QUANTITY_DELAY) * FORFEIT_PER_OFFER_DELAY;
-    let desiredIncome = sumReceivedFromLineCode - sumOfWithdraw;
+    const sumReceivedFromLineCode = Math.trunc(numberOfLinesCode / OFFER_LINES_CODE) * PRICE_PER_OFFER_LINES_CODE;
+    const sumOfWithdraw = Math.trunc(numberOfDelays / OFFER_QUANTITY_DELAY) * FORFEIT_PER_OFFER_DELAY;
+    const desiredIncome = sumReceivedFromLineCode - sumOfWithdraw;
     desiredIncome > 0 ? fieldForResult.innerText = "Result: " + desiredIncome + "  $" :
       fieldForResult.innerText = "Result: no work - no money!";
   }

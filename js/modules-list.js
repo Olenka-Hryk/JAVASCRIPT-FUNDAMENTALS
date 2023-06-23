@@ -119,7 +119,7 @@ const MODULES = [
         },
         {
           id: "2",
-          nameTask: "All integers: ",
+          nameTask: "Repeated sequence: ",
           descriptionTask:
             "Задані цілі числа <var>a і b (a < b)</var>. Виведіть усі цілі числа від <var>a</var> до <var>b</var> включно, при цьому <var>a</var> виводится 1 раз, число <var>а+1</var> - два рази і т.д. <br><samp>// 1,2,2,3,3,3...</samp>",
         },
