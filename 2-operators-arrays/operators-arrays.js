@@ -157,14 +157,9 @@ function executeModule2Task6() {
   const REGEXP_LETTERS = /[A-Za-z]/;
 
   document.getElementById("modal").style.display = "block";
-  document.querySelector(".modal__name").innerHTML = "The most common number in the array:";
-  let btnExecute = document.getElementById("modal-btn-execute");
-  btnExecute.style.display = "block";
+  document.querySelector(".modal__name").innerHTML = "The most frequent number in the array:";
   const container = document.querySelector(".modal__content");
-
   renderDomModalElements();
-  renderFieldForResult();
-  let fieldForResult = document.getElementById("result");
 
   function renderDomModalElements() {
     const listDomModalElement = [
@@ -180,6 +175,13 @@ function executeModule2Task6() {
         placeholder: "[4, 5, 2, 1, 6, 5, 3, 5, 2, 5]",
         classList: "",
         type: "text"
+      },
+      {
+        element: "button",
+        id: "execute-frequent-number",
+        classList: "button--form-ex",
+        text: "Execute",
+        onclick: () => { onclickModalExecuteModule2Task6() }
       }
     ];
     showFormElements(listDomModalElement, container);
@@ -198,32 +200,17 @@ function executeModule2Task6() {
     showFormElements(resultDomElement, container);
   }
 
-  btnExecute.addEventListener("click", () => {
+  function onclickModalExecuteModule2Task6() {
+    renderFieldForResult();
+    const fieldForResult = document.getElementById("result");
+
     let inputArray = document.getElementById("input-array").value;
     // let arr = [4, 5, 2, 1, 6, 5, 3, 5, 2, 5];
 
-    let arr = inputArray.split(/[.,; ]/);
+    let arr = parseInputToArrayOfNumbers(inputArray);
+    const frequentElm = findFrequencyElementOfArray(arr);
 
-    if (arr.some(e => REGEXP_LETTERS.test(e))) {
-      alert("WARNING:\nYour input array has some letters! I will remove them!");
-      arr = arr.filter((element) => {
-        return !REGEXP_LETTERS.test(element) && REGEXP_WHITESPACE.test(element);
-      });
-      fieldForResult.innerText = `Original array: [${arr}]\n`;
-    } else {
-      arr = arr.filter((element) => {
-        return REGEXP_WHITESPACE.test(element);
-      });
-    }
-
-    arr = arr.map(Number);
-
-    const frequencyElement = arr.reduce((acc, elem) => {
-      acc[elem] = !acc[elem] ? 1 : acc[elem] + 1;
-      return acc;
-    }, {});
-
-    const entries = Object.entries(frequencyElement);
+    const entries = Object.entries(frequentElm);
     let maxEntry = entries[0];
     for (const entry of entries) {
       if (entry[1] > maxEntry[1]) maxEntry = entry;
@@ -235,9 +222,36 @@ function executeModule2Task6() {
       let data = [maxEntry[0]];
       arr = arr.filter((elem) => elem !== +maxEntry[0]);
 
-      fieldForResult.innerText += `Result: most common element is ${data};\n New array: [ ${arr} ]`;
+      fieldForResult.innerText += `Result: most frequent element is ${data};\n New array: [ ${arr} ]`;
     }
-  });
+
+
+    function parseInputToArrayOfNumbers(inputArray) {
+      let newArr = inputArray.split(/[.,; ]/);
+      if (newArr.some(e => REGEXP_LETTERS.test(e))) {
+        alert("WARNING:\nYour input array has some letters! I will remove them!");
+        newArr = newArr.filter((element) => {
+          return !REGEXP_LETTERS.test(element) && REGEXP_WHITESPACE.test(element);
+        });
+        fieldForResult.innerText = `Original array: [${newArr}]\n`;
+      } else {
+        newArr = newArr.filter((element) => {
+          return REGEXP_WHITESPACE.test(element);
+        });
+      }
+      const finalArr = newArr.map(Number);
+      return finalArr;
+    }
+
+    function findFrequencyElementOfArray(array) {
+      const frequencyElement = array.reduce((acc, elem) => {
+        acc[elem] = !acc[elem] ? 1 : acc[elem] + 1;
+        return acc;
+      }, {});
+      return frequencyElement;
+    }
+
+  }
 }
 
 

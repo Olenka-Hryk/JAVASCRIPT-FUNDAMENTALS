@@ -93,7 +93,7 @@ const MODULES = [
         },
         {
           id: "6",
-          nameTask: "The most common number in the array: ",
+          nameTask: "The most frequent number in the array: ",
           descriptionTask:
             "Задано масив чисел, знайти число яке найбільш часто входить в масив, занести це число в новий масив і видалити всі входження цього числа із поточного масиву.<br><samp>let arr = [4, 5, 2, 1, 6, 5, 3, 5, 2, 5]<br>let data = ... // 5<br>...<br>console.log(arr) // [4, 2, 1, 6, 3, 2]",
         },
