@@ -89,6 +89,17 @@
     font-size: var(--modal-form-result-total-font-size);
 }
 
+.form__select {
+    font-family: var(--font-family-accent-text);
+    color: var(--font-color-accent-text);
+    font-size: var(--modal-select-font-size);
+    font-weight: var(--font-weight-main-text);
+    letter-spacing: var(--letter-spacing-main-text);
+    line-height: var(--line-height-main-text);
+    border-radius: var(--modal-border-radius);
+    border: var(--modal-select-border);
+}
+
 @media (min-width: 500px) {
     .modal__content {
         padding: 25px 15% 0px 15%;

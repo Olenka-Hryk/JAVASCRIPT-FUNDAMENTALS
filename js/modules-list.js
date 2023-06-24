@@ -133,11 +133,11 @@ const MODULES = [
           id: "4",
           nameTask: "No repeats: ",
           descriptionTask:
-            "Написати функцію <code>compact()</code> яка має приймати на вхід масив, а на вихід має повертати значення нового масиву без повторень. Haприклад:<br><samp>const arr = [5, 3, 4, 5,6,7,3]; <br>const arr2 = compact(arr); <br>console.log(arr2) ; // [5,3,4,6,7]</samp>",
+            "Написати функцію <code>compact()</code> яка має приймати на вхід масив, а на вихід має повертати значення нового масиву без повторень. Haприклад:<br><samp>const arr = [5, 3, 4, 5, 6, 7, 3]; <br>const arr2 = compact(arr); <br>console.log(arr2) ; // [5,3,4,6,7]</samp>",
         },
         {
           id: "5",
-          nameTask: "New arrays: ",
+          nameTask: "New sorted arrays: ",
           descriptionTask:
             "Є масив <code>[5, “Limit”, 12, “a”, “3”, 99, 2, [2, 4, 3, “33”, “a”, “text”], “strong”, “broun”]</code> <br>Написати функцію яка виведе нові масиви які складаються із даних початкового масиву, але одного типу даних (не приводити тип стрінг в число навіть якщо там лише число)<br> <samp>let  arr = [5, “Limit”, 12, “a”, “3”, 99, 2, [2, 4, 3, “33”, “a”, “text”], “strong”, “broun”];<br> let arrNew = funcName(arr); <br>/* <br>[<br>[5, 12, 99, 2, 2, 4, 3],<br>[”Limit”, “a”, “3”, “33”, “a”, “text”, “strong”, “broun”<br>] <br>*/</samp>",
         },

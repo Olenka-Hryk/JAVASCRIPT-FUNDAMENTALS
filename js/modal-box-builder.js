@@ -35,6 +35,22 @@ function showFormElements(arrayOfElements, block) {
             button.addEventListener('click', elem.onclick);
             block.appendChild(button);
         }
+
+        if (elem.element === "select") {
+            let select = document.createElement("select");
+            select.id = elem.id;
+            select.classList = "form__select " + elem.classList;
+            block.appendChild(select);
+        }
+
+        if (elem.element === "option") {
+            let option = document.createElement("option");
+            option.id = elem.id;
+            option.classList = " " + elem.classList;
+            option.value = elem.value;
+            option.innerHTML = elem.text;
+            block.appendChild(option);
+        }
     });
 }
 
@@ -65,4 +81,17 @@ function showFormElements(arrayOfElements, block) {
 //     classList: "button--form-ex",
 //     text: "Execute",
 //     onclick: () => { fffffffffffffffff() }
-// }]
+// }
+// {
+//     element: "select",
+//     id: "choose-op-module3-task6",
+//     classList: "",
+//   },
+//   {
+//     element: "option",
+//     id: "op-subtraction-module3-task6",
+//     classList: "",
+//     value: "subtraction",
+//     text: "subtraction",
+//   },
+// ]
