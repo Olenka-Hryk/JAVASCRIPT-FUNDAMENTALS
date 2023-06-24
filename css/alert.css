@@ -1,0 +1,88 @@
+.alert {
+    font-family: var(--alert-font-family);
+    font-weight: 400;
+    z-index: 2;
+    position: fixed;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 35px 20px 25px;
+    top: 25px;
+    right: 30px;
+    border-radius: 12px;
+    box-shadow: var(--alert-box-shadow);
+    overflow: hidden;
+    transform: translateX(calc(100% + 30px));
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+
+.alert.active {
+    transform: translateX(0%);
+}
+
+.alert--success {
+    background-color: var(--alert-success-color);
+}
+
+.alert--info {
+    background-color: var(--alert-info-color);
+}
+
+.alert--warning {
+    background-color: var(--alert-warning-color);
+}
+
+.alert--error {
+    background-color: var(--alert-error-color);
+}
+
+.alert-icon {
+    height: 35px;
+    max-width: 35px;
+}
+
+.alert-content {
+    color: var(--alert-color);
+}
+
+.alert-close-btn {
+    cursor: pointer;
+    position: absolute;
+    color: var(--alert-color);
+    font-size: 25px;
+    opacity: 0.7;
+    top: 5px;
+    right: 10px;
+}
+
+.alert-close-btn:hover {
+    opacity: 1;
+}
+
+.alert-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+}
+
+.alert-progress:before {
+    content: "";
+    background-color: var(--alert-color);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.alert-progress.active:before {
+    animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+    100% {
+        right: 100%;
+    }
+}

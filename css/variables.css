@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 :root {
+    --alert-color: #FFFFFF;
+    --alert-success-color: #11B981;
+    --alert-info-color: #1D4FD8;
+    --alert-warning-color: #F69E0D;
+    --alert-error-color: #EF4445;
+    --alert-font-family: 'Roboto', sans-serif;
+    --alert-box-shadow: 8px 6px 20px -5px rgb(161, 158, 158);
+
     --modal-background-color: rgba(0, 0, 0, 0.4);
     --modal-inner-background-color: #f0f5fd;
     --modal-border-radius: 15px;

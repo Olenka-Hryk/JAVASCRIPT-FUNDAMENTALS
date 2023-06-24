@@ -1,5 +1,6 @@
 @import url(variables.css);
 @import url(global.css);
 @import url(components.css);
+@import url(alert.css);
 @import url(modal-box.css);
 @import url(index.css);
