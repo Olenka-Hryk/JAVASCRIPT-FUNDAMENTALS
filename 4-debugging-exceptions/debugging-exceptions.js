@@ -602,7 +602,7 @@ function executeModule4Task5() {
       newArray = newArray.filter((element) => {
         return REGEXP_ANYTHING_BUT_A_WHITESPACE.test(element);
       });
-      if (newArray.length === 0 || newArray.some(e => REGEXP_LETTERS.test(e)))
+      if (newArray.length === 0 || newArray.some(e => !REGEXP_NUMBERS.test(e)))
         throw new FormValidationError("Array values are not numbers");
       newArray = newArray.map(Number);
 
