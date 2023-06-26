@@ -187,13 +187,13 @@ const MODULES = [
         },
         {
           id: "4",
-          nameTask: "Month Exception: ",
+          nameTask: "Find month name: ",
           descriptionTask:
             "Створіть клас <code>MonthException</code>, конструктор якого приймає параметр <code>message</code> і ініціалізує поле <code>name</code> значенням <code>MonthException</code>. Реалізуйте функцію <code>showMonthName(month)</code>, в якій параметр <code>month</code> – це порядковий номер місяця в році. Функція повертає назву місяця відповідно до введеного номера місяця. У випадку некоректного вводу кидається ексепшн у вигляді об’єкта класу <code>MonthException</code> з повідомленням <var>Incorrect month number</var>.  Напишіть код, який використовує цю функцію, передбачте обробку можливих винятків. <br>Приклад роботи програми: <br><samp>console.log(showMonthName(5));  // May <br>console.log(showMonthName(14)); // MonthException Incorrect month number</samp>",
         },
         {
           id: "5",
-          nameTask: "Show user id: ",
+          nameTask: "Show users ids: ",
           descriptionTask:
             "Реалізуйте функцію <code>showUser(id)</code>, яка приймає параметром користувацьке <code>id</code> і повертає об’єкт, який містить значення переданої <code>id</code>. Також функція викидає помилку у разі якщо введено від’ємне <code>id</code>. <br>Реалізуйте функцію <code>showUsers(ids)</code>, яка приймає параметром масив користувацьких айді <code>ids</code>, перевіряє з використанням функції <code>showUser()</code> кожен елемент масиву <code>ids</code> на коректність, в разі виключної ситуації виводить повідомлення про помилку. Функція <code>showUsers(ids)</code> повертає масив об’єктів, де значеннями ключів є коректні елементи <code>ids</code>. <br>Приклад роботи програми: <br><samp>showUsers([7, -12, 44, 22]);<br>// Error: ID must not be negative: -12 <br>// [ {id: 7}, {id: 44}, {id: 22} ]</samp>",
         }

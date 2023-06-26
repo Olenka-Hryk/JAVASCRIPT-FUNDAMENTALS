@@ -51,6 +51,25 @@
     margin-top: 25px;
 }
 
+.container-iframe {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 62.5%;
+}
+
+.iframe-movie {
+    border: none;
+    position: absolute;
+    margin-top: 20px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
 @media (min-width: 500px) {
     .module__tasks-list {
         align-items: center;

@@ -153,7 +153,7 @@ function executeModule2Task5() {
 
 // Task 6
 function executeModule2Task6() {
-  const REGEXP_WHITESPACE = /\S/;
+  const REGEXP_ANYTHING_BUT_A_WHITESPACE = /\S/;
   const REGEXP_LETTERS = /[A-Za-z]/;
 
   document.getElementById("modal").style.display = "block";
@@ -231,12 +231,12 @@ function executeModule2Task6() {
       if (newArr.some(e => REGEXP_LETTERS.test(e))) {
         alert("WARNING:\nYour input array has some letters! I will remove them!");
         newArr = newArr.filter((element) => {
-          return !REGEXP_LETTERS.test(element) && REGEXP_WHITESPACE.test(element);
+          return !REGEXP_LETTERS.test(element) && REGEXP_ANYTHING_BUT_A_WHITESPACE.test(element);
         });
         fieldForResult.innerText = `Original array: [${newArr}]\n`;
       } else {
         newArr = newArr.filter((element) => {
-          return REGEXP_WHITESPACE.test(element);
+          return REGEXP_ANYTHING_BUT_A_WHITESPACE.test(element);
         });
       }
       const finalArr = newArr.map(Number);

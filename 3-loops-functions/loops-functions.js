@@ -307,10 +307,10 @@ function executeModule3Task4() {
     console.log(finalArray);
 
     function parseInputToArray(inputArray) {
-      const REGEXP_WHITESPACE = /\S/;
+      const REGEXP_ANYTHING_BUT_A_WHITESPACE = /\S/;
       let newArray = inputArray.split(/[.,; ]/);
       newArray = newArray.filter((element) => {
-        return REGEXP_WHITESPACE.test(element);
+        return REGEXP_ANYTHING_BUT_A_WHITESPACE.test(element);
       });
       return newArray;
     }
@@ -623,10 +623,10 @@ function executeModule3Task7() {
     }
 
     function parseInputToArray(inputArray) {
-      const REGEXP_WHITESPACE = /\S/;
+      const REGEXP_ANYTHING_BUT_A_WHITESPACE = /\S/;
       let newArray = inputArray.split(/[.,; ]/);
       newArray = newArray.filter((element) => {
-        return REGEXP_WHITESPACE.test(element);
+        return REGEXP_ANYTHING_BUT_A_WHITESPACE.test(element);
       });
       return newArray;
     }
