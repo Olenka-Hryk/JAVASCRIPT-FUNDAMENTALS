@@ -127,7 +127,7 @@ function executeModule4Task1() {
     function sumSliceArray(arr, first, second) {
       let parsedArr = parseInputToArray(arr);
 
-      if (arr === "" && first === "" && second === "") {
+      if (!arr && !first && !second) {
         throw new InvalidArgsError('Input values are undefined', InvalidArgsError.INPUTS_UNDEFINED);
       }
       if (parsedArr.length === 0 || parsedArr.some(e => !REGEXP_NUMBERS.test(e))) {
@@ -279,7 +279,7 @@ function executeModule4Task2() {
       const ACCESS_STATUS_MODERATOR = "moderator";
       const ACCESS_STATUS_USER = "user";
 
-      if (userName === "" || userAge === "" || userStatus === "") {
+      if (!userName || !userAge || !userStatus) {
         throw new Error("Input values are undefined");
       }
       if (REGEXP_WHITESPACE.test(userAge) || !REGEXP_NUMBERS.test(userAge)) {
@@ -398,7 +398,7 @@ function executeModule4Task3() {
     }
 
     function calcRectangleArea(width, height) {
-      if (width === "" || height === "") {
+      if (!width || !height) {
         throw new InvalidArgsError("Input values are undefined", InvalidArgsError.ARGS_UNDEFINED);
       }
       if (REGEXP_WHITESPACE.test(width) || !REGEXP_NUMBERS.test(width) || REGEXP_WHITESPACE.test(height) || !REGEXP_NUMBERS.test(height)) {
@@ -490,7 +490,7 @@ function executeModule4Task4() {
     function showMonthName(month) {
       const listMonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-      if (month === "") {
+      if (!month) {
         throw new MonthException("Month number is undefined");
       }
       if (REGEXP_WHITESPACE.test(month) || !REGEXP_NUMBERS.test(month)) {
@@ -596,7 +596,7 @@ function executeModule4Task5() {
     }
 
     function parseInputToArray(inputArray) {
-      if (inputArray === "")
+      if (!inputArray)
         throw new FormValidationError("Array of the user ids is undefined");
       let newArray = inputArray.split(/[.,; ]/);
       newArray = newArray.filter((element) => {
