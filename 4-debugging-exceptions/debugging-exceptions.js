@@ -136,12 +136,12 @@ function executeModule4Task1() {
       if (!REGEXP_NUMBERS.test(first) || !REGEXP_NUMBERS.test(second)) {
         throw new InvalidArgsError('Input indices are not numbers', InvalidArgsError.WRONG_INDEX);
       }
-      if (first > parsedArr.length - 1 || second > parsedArr.length - 1) {
+      if (+first === 0 || +second === 0 || first > parsedArr.length || second > parsedArr.length) {
         throw new InvalidArgsError('Input indices are out of range', InvalidArgsError.WRONG_RANGE);
       }
 
       parsedArr = parsedArr.map(Number);
-      const result = parsedArr[first] + parsedArr[second];
+      const result = parsedArr[+first - 1] + parsedArr[+second - 1];
       return result;
     }
 
