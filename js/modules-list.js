@@ -215,7 +215,7 @@ const MODULES = [
         id: "2",
         nameTask: "Find the number of properties of the object: ",
         descriptionTask:
-          "Напишіть функцію <code>propsCount<wbr>(currentObject)</code>, яка приймає об’єкт і визначає кількість властивостей цього об’єкта. <br>Наприклад:<br> <pre><code>let mentor = { <br>        course: <wbr>'JS <wbr>fundamental',<br>        duration: 3,<br>        direction: <wbr>'<wbr>web-development'<br>     };<br> propsCount(mentor);  <wbr>// 3</code></pre>",
+          "Напишіть функцію <code>propsCount<wbr>(currentObject)</code>, яка приймає об’єкт і визначає кількість властивостей цього об’єкта. <br>Наприклад:<br> <pre style='overflow:auto'><code>let mentor = { <br>        course: 'JS fundamental',<br>        duration: 3,<br>        direction: 'web-development'<br>     };<br> propsCount(mentor);  // 3</code></pre>",
       },
       {
         id: "3",
