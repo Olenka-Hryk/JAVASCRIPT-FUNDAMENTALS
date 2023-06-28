@@ -189,7 +189,7 @@ const MODULES = [
         id: "4",
         nameTask: "Find month name: ",
         descriptionTask:
-          "Створіть клас <code>MonthException</code>, конструктор якого приймає параметр <code>message</code> і ініціалізує поле <code>name</code> значенням <code>MonthException</code>. Реалізуйте функцію <code>showMonthName(month)</code>, в якій параметр <code>month</code> – це порядковий номер місяця в році. Функція повертає назву місяця відповідно до введеного номера місяця. У випадку некоректного вводу кидається ексепшн у вигляді об’єкта класу <code>MonthException</code> з повідомленням <var>Incorrect month number</var>.  Напишіть код, який використовує цю функцію, передбачте обробку можливих винятків. <br>Приклад роботи програми: <br><samp>console.log(showMonthName(5));  // May <br>console.log(showMonthName(14)); // MonthException Incorrect month number</samp>",
+          "Створіть клас <code>MonthException</code>, конструктор якого приймає параметр <code>message</code> і ініціалізує поле <code>name</code> значенням <code>MonthException</code>. Реалізуйте функцію <code>showMonthName(month)</code>, в якій параметр <code>month</code> – це порядковий номер місяця в році. Функція повертає назву місяця відповідно до введеного номера місяця. У випадку некоректного вводу кидається ексепшн у вигляді об’єкта класу <code>MonthException</code> з повідомленням <var>Incorrect month number</var>.  Напишіть код, який використовує цю функцію, передбачте обробку можливих винятків. <br>Приклад роботи програми: <br><samp>console.log<wbr>(showMonthName(5));  // May <br>console.log<wbr>(showMonthName(14)); // MonthException Incorrect month number</samp>",
       },
       {
         id: "5",
@@ -215,7 +215,7 @@ const MODULES = [
         id: "2",
         nameTask: "Find the number of properties of the object: ",
         descriptionTask:
-          "Напишіть функцію <code>propsCount<wbr>(currentObject)</code>, яка приймає об’єкт і визначає кількість властивостей цього об’єкта. <br>Наприклад:<br> <pre><code>let mentor = { <br>        course: <wbr>'JS fundamental',<br>        duration: 3,<br>        direction: <wbr>'web-development'<br>     };<br> propsCount(mentor);  <wbr>// 3</code></pre>",
+          "Напишіть функцію <code>propsCount<wbr>(currentObject)</code>, яка приймає об’єкт і визначає кількість властивостей цього об’єкта. <br>Наприклад:<br> <pre><code>let mentor = { <br>        course: <wbr>'JS <wbr>fundamental',<br>        duration: 3,<br>        direction: <wbr>'<wbr>web-development'<br>     };<br> propsCount(mentor);  <wbr>// 3</code></pre>",
       },
       {
         id: "3",
