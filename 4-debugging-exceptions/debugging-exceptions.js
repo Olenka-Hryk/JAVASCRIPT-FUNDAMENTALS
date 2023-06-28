@@ -1,6 +1,7 @@
 const REGEXP_WHITESPACE = /\s/;
 const REGEXP_ANYTHING_BUT_A_WHITESPACE = /\S/;
 const REGEXP_NUMBERS = /^[0-9]+$/;
+const REGEXP_NUMBERS_WITH_NEGATIVE = /^[0-9-]+$/;
 const REGEXP_LETTERS = /[A-Za-z]/;
 
 
@@ -596,16 +597,17 @@ function executeModule4Task5() {
     }
 
     function parseInputToArray(inputArray) {
-      if (!inputArray)
+      if (!inputArray || +inputArray === 0)
         throw new FormValidationError("Array of the user ids is undefined");
+
       let newArray = inputArray.split(/[.,; ]/);
       newArray = newArray.filter((element) => {
         return REGEXP_ANYTHING_BUT_A_WHITESPACE.test(element);
       });
-      if (newArray.length === 0 || newArray.some(e => !REGEXP_NUMBERS.test(e)))
+
+      if (newArray.some(e => !REGEXP_NUMBERS_WITH_NEGATIVE.test(e) || e === "-"))
         throw new FormValidationError("Array values are not numbers");
       newArray = newArray.map(Number);
-
       return newArray;
     }
   }

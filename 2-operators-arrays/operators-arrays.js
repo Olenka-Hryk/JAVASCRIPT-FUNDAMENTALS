@@ -155,6 +155,7 @@ function executeModule2Task5() {
 function executeModule2Task6() {
   const REGEXP_ANYTHING_BUT_A_WHITESPACE = /\S/;
   const REGEXP_LETTERS = /[A-Za-z]/;
+  const REGEXP_NUMBERS = /\d/g;
 
   document.getElementById("modal").style.display = "block";
   document.querySelector(".modal__name").innerHTML = "The most frequent number in the array:";
@@ -175,6 +176,12 @@ function executeModule2Task6() {
         placeholder: "[4, 5, 2, 1, 6, 5, 3, 5, 2, 5]",
         classList: "",
         type: "text"
+      },
+      {
+        element: "p",
+        id: "input-array-parsed-module2-task6",
+        classList: "form__result--task",
+        text: "",
       },
       {
         element: "button",
@@ -203,11 +210,15 @@ function executeModule2Task6() {
   function onclickModalExecuteModule2Task6() {
     renderFieldForResult();
     const fieldForResult = document.getElementById("result");
+    const fieldForParsedInputArray = document.getElementById("input-array-parsed-module2-task6");
 
     const inputArray = document.getElementById("input-array-module2-task6").value;
-    // let arr = [4, 5, 2, 1, 6, 5, 3, 5, 2, 5];
+    if (!isCorrectInput(inputArray)) {
+      return;
+    }
 
-    let arr = parseInputToArrayOfNumbers(inputArray);
+    // let arr = [4, 5, 2, 1, 6, 5, 3, 5, 2, 5];
+    let arr = parseInputToArrayOfNumbers(inputArray, fieldForParsedInputArray);
     const frequentElm = findFrequencyElementOfArray(arr);
 
     const entries = Object.entries(frequentElm);
@@ -226,14 +237,26 @@ function executeModule2Task6() {
     }
 
 
-    function parseInputToArrayOfNumbers(inputArray) {
+    function isCorrectInput(array) {
+      if (!array || +array === 0) {
+        showAlert("error", "Your array is empty! You did not enter an array of elements! \n Please enter the data.");
+        return false;
+      } else
+        if (!array.match(REGEXP_NUMBERS)) {
+          showAlert("error", "Your input array consists only of letters! \n Please try entering the array elements in numeric format.");
+          return false;
+        } else
+          return true;
+    }
+
+    function parseInputToArrayOfNumbers(inputArray, placeForOutputParsedArray) {
       let newArr = inputArray.split(/[.,; ]/);
       if (newArr.some(e => REGEXP_LETTERS.test(e))) {
-        alert("WARNING:\nYour input array has some letters! I will remove them!");
+        showAlert("warning", "WARNING:\nYour input array has some letters! I will remove them!");
         newArr = newArr.filter((element) => {
           return !REGEXP_LETTERS.test(element) && REGEXP_ANYTHING_BUT_A_WHITESPACE.test(element);
         });
-        fieldForResult.innerText = `Original array: [${newArr}]\n`;
+        placeForOutputParsedArray.innerText = `Original array: [${newArr}]\n`;
       } else {
         newArr = newArr.filter((element) => {
           return REGEXP_ANYTHING_BUT_A_WHITESPACE.test(element);
@@ -250,7 +273,6 @@ function executeModule2Task6() {
       }, {});
       return frequencyElement;
     }
-
   }
 }
 
@@ -420,7 +442,7 @@ function executeModule2Task7() {
         element: "p",
         id: "result",
         classList: "",
-        text: "Result: "
+        text: ""
       },
     ];
     showFormElements(resultDomElement, container);
@@ -445,6 +467,11 @@ function executeModule2Task7() {
     const desiredIncome = +document.getElementById("income-desired-module2-task7").value;
     const numberOfDelays = +document.getElementById("delays-module2-task7").value;
 
+    if (!desiredIncome || !numberOfDelays) {
+      showAlert("error", "You have not entered the required data! \n Please enter the data.");
+      return;
+    }
+
     const sumOfWithdraw = Math.trunc(numberOfDelays / OFFER_QUANTITY_DELAY) * FORFEIT_PER_OFFER_DELAY;
     const numOfReqLineCode = Math.ceil((desiredIncome + sumOfWithdraw) / PRICE_PER_OFFER_LINES_CODE) * OFFER_LINES_CODE;
     fieldForResult.innerText = "Result: " + numOfReqLineCode + "  lines code";
@@ -455,6 +482,11 @@ function executeModule2Task7() {
     const fieldForResult = document.getElementById("result");
     const numberOfLinesCode = +document.getElementById("lines-code-module2-task7").value;
     const desiredIncome = +document.getElementById("income-desired-module2-task7").value;
+
+    if (!numberOfLinesCode || !desiredIncome) {
+      showAlert("error", "You have not entered the required data! \n Please enter the data.");
+      return;
+    }
 
     const sumReceivedFromLineCode = Math.trunc(numberOfLinesCode / OFFER_LINES_CODE) * PRICE_PER_OFFER_LINES_CODE;
     const numOfAllowedDelay = Math.trunc((sumReceivedFromLineCode - desiredIncome) / FORFEIT_PER_OFFER_DELAY) + ALLOWED_DELAY_WITHOUT_FORFEIT;
@@ -467,6 +499,11 @@ function executeModule2Task7() {
     const fieldForResult = document.getElementById("result");
     const numberOfLinesCode = +document.getElementById("lines-code-module2-task7").value;
     const numberOfDelays = +document.getElementById("delays-module2-task7").value;
+
+    if (!numberOfLinesCode || !numberOfDelays) {
+      showAlert("error", "You have not entered the required data! \n Please enter the data.");
+      return;
+    }
 
     const sumReceivedFromLineCode = Math.trunc(numberOfLinesCode / OFFER_LINES_CODE) * PRICE_PER_OFFER_LINES_CODE;
     const sumOfWithdraw = Math.trunc(numberOfDelays / OFFER_QUANTITY_DELAY) * FORFEIT_PER_OFFER_DELAY;

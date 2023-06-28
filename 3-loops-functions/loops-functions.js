@@ -63,6 +63,11 @@ function executeModule3Task1() {
     const initialValue = +document.getElementById("initial-value-module3-task1").value;
     const finalValue = +document.getElementById("final-value-module3-task1").value;
 
+    if (!initialValue || !finalValue) {
+      showAlert("error", "You have not entered the required data! \n Please enter the data.");
+      return;
+    }
+
     const arr = createArray(initialValue, finalValue);
     fieldForResult.innerText = `Result: your array in range [${initialValue} - ${finalValue}] \n is [ ${arr} ]`;
     console.log(arr);
@@ -149,8 +154,13 @@ function executeModule3Task2() {
     const valueA = +document.getElementById("input-value-a-module3-task2").value;
     const valueB = +document.getElementById("input-value-b-module3-task2").value;
 
+    if (!valueA || !valueB) {
+      showAlert("error", "You have not entered the required data! \n Please enter the data.");
+      return;
+    }
+
     if (valueA > valueB) {
-      alert("Sorry! \nYou entered values a and b that don't satisfy the condition a < b. \nTry again!");
+      showAlert("error", "Sorry! \nYou entered values a and b that don't satisfy the condition a < b. \nTry again!");
       return;
     }
 
@@ -223,8 +233,8 @@ function executeModule3Task3() {
     const fieldForResult = document.getElementById("result");
     const lengthOfArray = +document.getElementById("input-value-k-module3-task3").value;
 
-    if (lengthOfArray === 0) {
-      alert("You haven't entered the required data! \nTry again.");
+    if (!lengthOfArray) {
+      showAlert("error", "You have not entered the required data! \n Please enter the data.");
       return;
     }
 
@@ -296,7 +306,7 @@ function executeModule3Task4() {
     const initialArray = document.getElementById("input-array-module3-task4").value;
 
     if (+initialArray === 0) {
-      alert("You haven't entered the required data! \nTry again.");
+      showAlert("error", "You haven't entered the required data! \nTry again.");
       return;
     }
 
@@ -384,7 +394,7 @@ function executeModule3Task5() {
       fieldForResult.innerHTML = `New grouped arrays: <br> [ ${arraysGroupedByType} ]`;
     } catch (error) {
       console.warn(error);
-      alert("The entered array is not in JSON format. \nTry again!");
+      showAlert("error", "The entered array is not in JSON format. \nTry again!");
     }
 
 
@@ -527,6 +537,11 @@ function executeModule3Task6() {
     const valueA = +document.getElementById("input-value-a-module3-task6").value;
     const valueB = +document.getElementById("input-value-b-module3-task6").value;
 
+    if (!valueA || !valueB) {
+      showAlert("error", "You have not entered the required data! \n Please enter the data.");
+      return;
+    }
+
     const result = calc(valueA, valueB, selectedOperation);
     // console.log(calc(10, 3, 1));
     fieldForResult.innerText = showProperResultMessage(valueA, valueB, selectedOperation, result);
@@ -604,8 +619,8 @@ function executeModule3Task7() {
     const fieldForResult = document.getElementById("result");
     const inputArray = document.getElementById("input-array-module3-task7").value;
 
-    if (inputArray.length === 0) {
-      alert("The entered array is empty! \nPlease enter the array elements again.");
+    if (!inputArray || +inputArray === 0) {
+      showAlert("error", "The entered array is empty! \nPlease enter the array elements again.");
       return;
     }
 
@@ -699,6 +714,11 @@ function executeModule3Task8() {
     const fieldForResult = document.getElementById("result");
     const inputFirstString = document.getElementById("input-first-string-module3-task8").value;
     const inputSecondString = document.getElementById("input-second-string-module3-task8").value;
+
+    if (!inputFirstString || !inputSecondString || +inputFirstString === 0 || +inputSecondString === 0) {
+      showAlert("error", "You have not entered the required data! \n Please enter the data.");
+      return;
+    }
 
     const isMatch = create(inputFirstString);
     isMatch(inputFirstString);

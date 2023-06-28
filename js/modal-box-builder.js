@@ -26,6 +26,14 @@ function showFormElements(arrayOfElements, block) {
             block.appendChild(p);
         }
 
+        if (elem.element === "p" && elem.classList === "form__result--task") {
+            let p = document.createElement("p");
+            p.id = elem.id;
+            p.classList = "accent-text form__result " + elem.classList;
+            p.innerHTML = elem.text;
+            block.appendChild(p);
+        }
+
         if (elem.element === "button") {
             let button = document.createElement("button");
             button.id = elem.id;
