@@ -45,6 +45,7 @@
 
 .module__task-name {
     font-size: 20px;
+    line-height: var(--line-height-main-text);
 }
 
 .module__task-execute-btn {
@@ -89,5 +90,10 @@
 
     .module__tasks-list {
         flex-direction: row;
+    }
+
+    .module__task-name {
+        font-size: 20px;
+        line-height: var(--line-height-accent-text);
     }
 }
