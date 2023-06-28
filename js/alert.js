@@ -1,4 +1,4 @@
-const alert = document.getElementById("alert");
+const newAlert = document.getElementById("alert");
 const alertIcon = document.getElementById("alert-icon");
 const alertContent = document.getElementById("alert-content");
 const alertProgress = document.getElementById("alert-progress");
@@ -28,7 +28,7 @@ function showAlert(status, message) {
     const config = ALERT_CONFIG[status];
     if (config) {
         closeAlert.addEventListener('click', () => {
-            alert.classList.remove("active");
+            newAlert.classList.remove("active");
             setTimeout(() => {
                 alertProgress.classList.remove("active");
             }, 300);
@@ -37,12 +37,12 @@ function showAlert(status, message) {
     if (!config) {
         throw new Error("Unknown status for alert");
     }
-    alert.setAttribute("class", `alert ${config.className} active`);
+    newAlert.setAttribute("class", `alert ${config.className} active`);
     alertIcon.setAttribute('src', config.icon);
     alertContent.innerText = message;
     alertProgress.classList.add("active");
     setTimeout(() => {
-        alert.classList.remove("active");
+        newAlert.classList.remove("active");
     }, 5000);
     setTimeout(() => {
         alertProgress.classList.remove("active");
