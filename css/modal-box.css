@@ -1,4 +1,3 @@
-
 .modal {
     display: none;
     overflow: auto;
@@ -73,20 +72,27 @@
 }
 
 .form__result {
-    font-size: var(--modal-form-input-font-size);
-    line-height: var(--modal-form-input-line-height);
+    word-wrap: break-word;
+    font-size: var(--modal-form-result-font-size);
+    line-height: var(--modal-form-result-line-height);
 }
 
 .form__result--task {
-    padding: 5px 1em 20px 1em;
     color: var(--modal-form-result-task-color);
+    text-align: center;
+    padding: 5px 1em 20px 1em;
+}
+
+.form__result--task-part {
+    color: var(--modal-form-result-task-color);
+    font-size: var(--modal-form-result-task-part-font-size);
+    margin-top: 5px;
 }
 
 .form__result--total {
-    padding-top: 20px;
-    text-align: center;
-    word-wrap: break-word;
     font-size: var(--modal-form-result-total-font-size);
+    text-align: center;
+    padding-top: 20px;
 }
 
 .form__select {

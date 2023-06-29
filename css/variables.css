@@ -26,8 +26,11 @@
     --modal-form-input-border-radius: 5px;
     --modal-form-input-border: 1px solid #1d95c9;
     --modal-form-input-box-shadow: 0.2rem 0.8rem 1.6rem rgba(35, 61, 98, 0.06);
-    --modal-form-result-task-color: #37aee2;
+    --modal-form-result-font-size: 20px;
     --modal-form-result-total-font-size: 22px;
+    --modal-form-result-line-height: 25px;
+    --modal-form-result-task-color: #37aee2;
+    --modal-form-result-task-part-font-size: 18px;
     --modal-select-border: 1px solid rgb(72, 86, 102);
     --modal-select-font-size: 18px;
 
