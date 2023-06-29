@@ -236,5 +236,55 @@ const MODULES = [
           "Створіть клас <code>Worker</code> який буде мати конструктор, який приймає наступні властивості: <code>fullName</code> (ім’я і прізвище), <code>dayRate</code> (ставка за день роботи), <code>workingDays</code> (кількість відпрацьованих днів). <br>  <code>1)</code> клас повинен мати метод <code>showSalary()</code>, який буде виводити <var>зарплату</var> працівника. Зарплата - це добуток ставки <code>dayRate</code> на кількість відпрацьованих днів <code>workingDays</code>. <br>  <code>2)</code> додати приватне поле <code>experience</code> і присвоїти йому значення <var>1.2</var> і використовувати його як додатковий множник при визначенні зарплати – створити метод <code>showSalaryWithExperience<wbr>()</code>. Вивести значення зарплати з цим коефіцієнтом. <br> <code>3)</code> додати гетери і сетери для поля <code>experience</code>. Встановити значення <code>experience = 1.5</code> і вивести його на екран. <br> <code>4)</code> вивести значення зарплати з новим <code>experience</code>. <br> <code>5)</code> створити кілька екземплярів класу (працівників) з різними зарплатами, як показано в прикладі нижче. Посортувати зарплату працівників із найбільшим <code>experience</code> по зростанню і вивести результат в форматі:  <code> worker_fullName: salary_value </code> <br> <code>6)</code> реалізувати динамічне сортування для будь-якої кількості працівників-екземплярів класу <code>Worker</code>.<br><br><pre><mark style='background: #33aadd69!important'><b>  Example usage:  </b></mark></pre><code>let worker1 = new Worker('John Johnson', 20, 23);<br>console.log(<wbr>worker1.fullName);<br>worker1.showSalary();<br>console.log('New experience: ' + worker1.showExp);<br>worker1.<wbr>showSalaryWithExperience<wbr>();<br>worker1.setExp = 1.5;<br>console.log('New experience: ' + worker1.showExp);<br>worker1.<wbr>showSalaryWithExperience<wbr>();<br><br>let worker2 = new Worker('Tom Tomson', 48, 22);<br>. . . . . .<br>let worker3 = new Worker('Andy Ander', 29, 23);<br>. . . . . .<br><br><pre><mark style='background: #33aadd69!important'><b>  Output example:  </b></mark></pre><br>John Johnson<br><br>John Johnson salary: 460<br>New experience: 1.2<br>John Johnson salary: 552<br>New experience: 1.5<br>John Johnson salary: 690<br><br>Tom Tomson<br>Tom Tomson salary: 1056<br>. . . . . .<br>New experience: 1.5<br>Tom Tomson  salary: 1584<br><br>Andy Ander<br>Andy Ander salary: 667<br>. . . . . .<br>New experience: 1.5<br>Andy Ander  salary: 1000.5<br><br>Sorted salary:<br>John Johnson: 690<br>Andy Ander: 1000.5<br>Tom Tomson: 1584</code>",
       }
     ],
+  },
+  {
+    id: "document-object-model",
+    chapter: "6",
+    name: "6. DOCUMENT OBJECT MODEL (DOM)",
+    numberOfTasks: "7",
+    tasks: [
+      {
+        id: "1",
+        nameTask: "HTML list: ",
+        descriptionTask:
+          "На HTML-сторінці є ненумерований список з <code>id='list'</code>, який складається із 5 елементів. У модальному вікні необхідно послідовно вивести вміст: <br><code>1)</code> першого елемента списку <br><code>2)</code> останнього елемента списку <br><code>3)</code> другого елемента списку <br><code>4)</code> четвертого елемента списку <br><code>5)</code> третього елемента списку <br>Приклад:<br><pre>     •   1<br>     •   2<br>     •   3<br>     •   4<br>     •   5</pre>Результат виводу: <code>1, 5, 2, 4, 3</code>",
+      },
+      {
+        id: "2",
+        nameTask: "Stylization of the page using DOM: ",
+        descriptionTask:
+          "Для сторінки <br><code><pre style='overflow:auto'>     &lt;body&gt;<br>          &lt;h1&gt;I'am a big header!!!&lt;/h1&gt;<br>          &lt;div id='myDiv'&gt;<br>            &lt;p&gt;First paragraph&lt;/p&gt;<br>            &lt;p&gt;Second paragraph&lt;/p&gt;<br>            &lt;p&gt;Third paragraph&lt;/p&gt;<br>            &lt;p&gt;Fourth paragraph&lt;/p&gt;<br>          &lt;/div&gt;<br>          &lt;ul id='myList'&gt;<br>            &lt;li&gt;Make&lt;/li&gt;<br>            &lt;li&gt;me&lt;/li&gt;<br>            &lt;li&gt;horizontal!&lt;/li&gt;<br>          &lt;/ul&gt;<br>          &lt;span&gt;Make me invisible, please!&lt;/span&gt;<br>    &lt;/body&gt;</pre></code> <br>Напишіть скріпт, який за допомогою засобів DOM простилізує сторінку так як показано на картинці. <br><u>http://surl.li/ipjhh</u>",
+      },
+      {
+        id: "3",
+        nameTask: "Write a simple HTML page: ",
+        descriptionTask:
+          "Напишіть скріпт, який за допомогою засобів DOM створить для порожньої HTML-сторінки таку структуру з тегів і їх атрибутів.<br><code><pre style='overflow:auto'>   &lt;body&gt;<br>        &lt;main class='mainClass check item'&gt;<br>           &lt;div id='myDiv'&gt;<br>              &lt;p&gt;First paragraph&lt;/p&gt;<br>          &lt;/div&gt;<br>       &lt;/main&gt;<br>   &lt;/body&gt;</pre></code>",
+      },
+      {
+        id: "4",
+        nameTask: "Data output from fields: ",
+        descriptionTask:
+          "https://codepen.io/misha_klymenko/pen/Jjabvez <br>Реалізувати вивід даних із полів при кліку на кнопку <code>'Надіслати'</code> в поле <code>outBlock</code>",
+      },
+      {
+        id: "5",
+        nameTask: "Circle: ",
+        descriptionTask:
+          "https://codepen.io/misha_klymenko/pen/abzLvqo <br> <code>1)</code> вибрати всі теги із класом circle <br><code>2)</code> перебрати кожен елемент, і вибрати його data-anim значення <br><code>3)</code> вибране значення додати як клас за допомогою classList до цього елемента <br><code>4)</code> перевірити чи застосувались анімації <br><br>  - вибірка елемента із DOM дерева <br> - вибрати клас елемента (https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) <br> - вибрати із data атрибута значення і занести те значення в клас елемента для якого ми вибрали поточний атрибут",
+      },
+      {
+        id: "6",
+        nameTask: "Calculate the price of the product: ",
+        descriptionTask:
+          "https://codepen.io/misha_klymenko/pen/dyjyeGO <br>Реалізувати логіку підрахунку ціни товару по його варіаціях (шаблон наведений тут, при кліку на колір змінювати ціну товару). Придумати ще 2 варіації, від яких буде залежати ціна товару.",
+      },
+      {
+        id: "6",
+        nameTask: "&#10025; &#10025; &#10025; Electronic clock",
+        descriptionTask:
+          "Зробити електронний годинник у такому стилі. <br>http://surl.li/ipjll",
+      }
+    ],
   }
 ];
