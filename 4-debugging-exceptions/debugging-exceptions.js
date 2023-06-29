@@ -147,7 +147,7 @@ function executeModule4Task1() {
     }
 
     function parseInputToArray(inputArray) {
-      let newArray = inputArray.split(/[.,; ]/);
+      let newArray = inputArray.split(/[\[\].,; ]/);
       newArray = newArray.filter((element) => {
         return REGEXP_ANYTHING_BUT_A_WHITESPACE.test(element);
       });
@@ -600,7 +600,7 @@ function executeModule4Task5() {
       if (!inputArray || +inputArray === 0)
         throw new FormValidationError("Array of the user ids is undefined");
 
-      let newArray = inputArray.split(/[.,; ]/);
+      let newArray = inputArray.split(/[\[\].,; ]/);
       newArray = newArray.filter((element) => {
         return REGEXP_ANYTHING_BUT_A_WHITESPACE.test(element);
       });

@@ -250,7 +250,7 @@ function executeModule2Task6() {
     }
 
     function parseInputToArrayOfNumbers(inputArray, placeForOutputParsedArray) {
-      let newArr = inputArray.split(/[.,; ]/);
+      let newArr = inputArray.split(/[\[\].,; ]/);
       if (newArr.some(e => REGEXP_LETTERS.test(e))) {
         showAlert("warning", "WARNING:\nYour input array has some letters! I will remove them!");
         newArr = newArr.filter((element) => {
