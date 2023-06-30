@@ -24,6 +24,7 @@
     --modal-form-input-line-height: 25px;
     --modal-form-input-letter-spacing: 0.1px;
     --modal-form-input-border-radius: 5px;
+    --modal-form-textarea-border-radius: 10px;
     --modal-form-input-border: 1px solid #1d95c9;
     --modal-form-input-box-shadow: 0.2rem 0.8rem 1.6rem rgba(35, 61, 98, 0.06);
     --modal-form-result-font-size: 20px;
