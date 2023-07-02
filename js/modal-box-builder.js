@@ -14,28 +14,73 @@ function showFormElements(arrayOfElements, block) {
             addOption(elem, block);
         } else if (elem.element === "textarea") {
             addTextarea(elem, block);
+        } else if (elem.element === "output") {
+            addOutput(elem, block);
         }
     });
 }
 
 function addLabel(elem, container) {
-    const label = document.createElement("label");
-    if (elem.id) label.id = elem.id;
-    label.setAttribute("for", elem.for);
-    label.classList.add("main-text", "form__label");
-    if (elem.classList) label.classList.add(elem.classList);
-    label.innerHTML = elem.text;
-    container.appendChild(label);
+    if (elem.classList.includes("form__label-checkbox")) {
+        const label = document.createElement("label");
+        label.setAttribute("for", elem.for);
+        label.classList.add("form__label-checkbox");
+        label.innerHTML = elem.text;
+        container.appendChild(label);
+    } else {
+        const label = document.createElement("label");
+        if (elem.id) label.id = elem.id;
+        label.setAttribute("for", elem.for);
+        label.classList.add("main-text", "form__label");
+        if (elem.classList) label.classList.add(elem.classList);
+        label.innerHTML = elem.text;
+        container.appendChild(label);
+    }
 }
 
 function addInput(elem, container) {
-    const input = document.createElement("input");
-    input.id = elem.id;
-    input.setAttribute("placeholder", elem.placeholder);
-    input.classList.add("accent-text", "form__input");
-    if (elem.classList) input.classList.add(elem.classList);
-    input.type = elem.type;
-    container.appendChild(input);
+    if (elem.classList.includes("form__input-color")) {
+        const input = document.createElement("input");
+        input.id = elem.id;
+        input.classList.add("form__input-color");
+        input.value = elem.value;
+        input.type = elem.type;
+        container.appendChild(input);
+    } else if (elem.classList.includes("form__input-checkbox")) {
+        const input = document.createElement("input");
+        input.id = elem.id;
+        input.classList.add("form__input-checkbox");
+        input.type = elem.type;
+        input.onchange = elem.onchange;
+        container.appendChild(input);
+    } else if (elem.classList.includes("form__input-range")) {
+        const input = document.createElement("input");
+        input.id = elem.id;
+        input.classList.add("form__input-range");
+        input.value = elem.value;
+        input.min = elem.min;
+        input.max = elem.max;
+        input.type = elem.type;
+        input.oninput = elem.oninput;
+        container.appendChild(input);
+    } else {
+        const input = document.createElement("input");
+        input.id = elem.id;
+        input.setAttribute("placeholder", elem.placeholder);
+        input.classList.add("accent-text", "form__input");
+        if (elem.classList) input.classList.add(elem.classList);
+        input.type = elem.type;
+        container.appendChild(input);
+    }
+}
+
+function addOutput(elem, container) {
+    const output = document.createElement("output");
+    output.id = elem.id;
+    output.setAttribute("for", elem.for);
+    if (elem.classList) output.classList.add(elem.classList);
+    output.value = elem.value;
+    container.appendChild(output);
 }
 
 function addP(elem, container) {

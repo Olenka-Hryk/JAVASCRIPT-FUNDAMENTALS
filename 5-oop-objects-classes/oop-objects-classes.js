@@ -475,10 +475,356 @@ function executeModule5Task3() {
     }
 }
 
+
+
 // Task 4
 function executeModule5Task4() {
-    showAlert("info", "The script will be here soooooon");
+    document.getElementById("modal").style.display = "block";
+    document.querySelector(".modal__name").innerHTML = "Class Marker:";
+    const container = document.querySelector(".modal__content");
+    renderDomModalElements();
+
+    const containerForRefill = document.createElement("div");
+    containerForRefill.id = "marker-container-for-refill";
+    containerForRefill.classList.add("form__marker-container");
+    container.appendChild(containerForRefill);
+
+    const containerForRefillCheckbox = document.createElement("div");
+    containerForRefillCheckbox.id = "marker-container-for-refill-checkbox";
+    containerForRefillCheckbox.classList.add("form__marker-container-checkbox");
+    containerForRefill.appendChild(containerForRefillCheckbox);
+    renderRefillMarkerCheckbox();
+
+    const containerForRefillRange = document.createElement("div");
+    containerForRefillRange.id = "marker-container-for-refill-range";
+    containerForRefillRange.classList.add("form__marker-container-range");
+    containerForRefill.appendChild(containerForRefillRange);
+    renderRefillMarkerRange();
+    renderRefillButton();
+    renderFieldForInkResidue();
+    renderPrintButton();
+    renderFieldForResult();
+    renderFieldForPrinting();
+
+    const fieldForInkResidue = document.getElementById("amount-of-ink-residue-module5-task4");
+    fieldForInkResidue.style.display = "none";
+
+    const checkboxFullRefill = document.getElementById("refill-marker-full-module5-task4");
+    const rangeInput = document.getElementById("refill-marker-range-module5-task4");
+    const numberInputRange = document.getElementById("rangevalue-m5-t4");
+
+    function onchangeForCheckboxModule5Task4() {
+        if (checkboxFullRefill.checked) {
+            numberInputRange.value = "100 %";
+            rangeInput.value = 100;
+        }
+    }
+
+    function oninputForRangeModule5Task4() {
+        numberInputRange.value = `${rangeInput.value} %`;
+    }
+
+    function renderDomModalElements() {
+        const listDomModalElement = [
+            {
+                element: "label",
+                for: "input-color-module5-task4",
+                classList: "",
+                text: "Select a marker color:",
+            },
+            {
+                element: "input",
+                id: "input-color-module5-task4",
+                classList: "form__input-color",
+                value: "#e66465",
+                type: "color",
+            },
+            {
+                element: "label",
+                for: "input-amount-ink-module5-task4",
+                classList: "",
+                text: "Enter the amount of ink in the marker:",
+            },
+            {
+                element: "input",
+                id: "input-amount-ink-module5-task4",
+                placeholder: "50 %",
+                classList: "",
+                type: "number",
+            },
+            {
+                element: "label",
+                for: "input-string-module5-task4",
+                classList: "",
+                text: "Enter the required string to print:",
+            },
+            {
+                element: "textarea",
+                id: "input-string-module5-task4",
+                rows: "8",
+                cols: "50",
+                placeholder: "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.",
+                classList: "",
+            },
+        ];
+        showFormElements(listDomModalElement, container);
+    }
+
+    function renderRefillMarkerCheckbox() {
+        const listRefillMarkerElement = [
+            {
+                element: "input",
+                id: "refill-marker-full-module5-task4",
+                classList: "form__input-checkbox",
+                type: "checkbox",
+                onchange: () => { onchangeForCheckboxModule5Task4(); },
+            },
+            {
+                element: "label",
+                for: "refill-marker-full-module5-task4",
+                classList: "form__label-checkbox",
+                text: "Full refueling (100%)",
+            },
+        ];
+        showFormElements(listRefillMarkerElement, containerForRefillCheckbox);
+    }
+
+    function renderRefillMarkerRange() {
+        const listRefillMarkerElement = [
+            {
+                element: "input",
+                id: "refill-marker-range-module5-task4",
+                classList: "form__input-range",
+                value: "0",
+                min: "0",
+                max: "100",
+                type: "range",
+                oninput: () => { oninputForRangeModule5Task4(); },
+            },
+            {
+                element: "output",
+                id: "rangevalue-m5-t4",
+                for: "refill-marker-range-module5-task4",
+                classList: "form__output-for-range",
+                value: "0 %",
+            },
+        ];
+        showFormElements(listRefillMarkerElement, containerForRefillRange);
+    }
+
+    function renderRefillButton() {
+        const refillButtonElement = [
+            {
+                element: "button",
+                id: "refill-module5-task4",
+                classList: "button--form-option",
+                text: "Refill",
+                onclick: () => { onclickForRefillModule5Task4(); },
+            },
+        ];
+        showFormElements(refillButtonElement, containerForRefill);
+    }
+
+    function renderPrintButton() {
+        const printButtonElement = [
+            {
+                element: "button",
+                id: "print-module5-task4",
+                classList: "button--form-ex",
+                text: "Print",
+                onclick: () => { onclickModalExecuteModule5Task4(); },
+            },
+        ];
+        showFormElements(printButtonElement, container);
+    }
+
+    function renderFieldForResult() {
+        document.querySelectorAll("#result").forEach((e) => e.remove());
+        const resultDomElement = [
+            {
+                element: "p",
+                id: "result",
+                classList: "",
+                text: "",
+            },
+        ];
+        showFormElements(resultDomElement, container);
+    }
+
+    function renderFieldForPrinting() {
+        document.querySelectorAll("#printed-string-module5-task4").forEach((e) => e.remove());
+        const fieldForPrint = [
+            {
+                element: "p",
+                id: "printed-string-module5-task4",
+                classList: "form__printing-text",
+                text: "",
+            },
+        ];
+        showFormElements(fieldForPrint, container);
+    }
+
+    function renderFieldForInkResidue() {
+        document.querySelectorAll("#amount-of-ink-residue-module5-task4").forEach((e) => e.remove());
+        const fieldForPrint = [
+            {
+                element: "label",
+                id: "amount-of-ink-residue-module5-task4",
+                for: "input-amount-ink-module5-task4",
+                classList: "",
+                text: "",
+            },
+        ];
+        showFormElements(fieldForPrint, container);
+    }
+
+
+    class Marker {
+        get totalInk() {
+            return this._totalInk;
+        }
+
+        set totalInk(value) {
+            if (value < 0 || value > 100) throw new Error('Wrong totalInk argument');
+            this._totalInk = value;
+        }
+
+        constructor(color, totalInk) {
+            this.color = color;
+            this.totalInk = totalInk;
+        }
+
+        print(text) {
+            const result = [];
+            let index = 0;
+            while (this.totalInk >= Marker.INK_PER_CHAR && index < text.length) {
+                const char = text.charAt(index);
+                result.push(char);
+                index++;
+                if (char !== ' ') {
+                    this.totalInk -= Marker.INK_PER_CHAR;
+                }
+            }
+            this.render(result.join(''));
+        }
+
+        render(text) {
+            const fieldForPrinting = document.getElementById("printed-string-module5-task4");
+            const fieldForResult = document.getElementById("result");
+            fieldForResult.innerText = "Printing...";
+            let i = 0;
+            fieldForPrinting.style.color = this.color;
+            fieldForPrinting.innerHTML = "";
+            const typeWriter = () => {
+                if (i < text.length) {
+                    fieldForPrinting.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, Marker.PRINT_SPEED);
+                }
+                if (i === text.length)
+                    fieldForResult.innerText = "Printed!";
+            }
+            typeWriter();
+        }
+
+        static get PRINT_SPEED() {
+            return 50;
+        }
+
+        static get INK_PER_CHAR() {
+            return 0.5;
+        }
+    }
+
+    class RefillableMarker extends Marker {
+        constructor(color, totalInk) {
+            super(color, totalInk);
+        }
+
+        refill() {
+            this.totalInk = 100;
+        }
+
+        refillBy(delta) {
+            try {
+                this.totalInk = this.totalInk + delta;
+            } catch (err) {
+                showAlert("error", "Marker is full. Too much ink!");
+                throw new Error('Marker is full. Too much ink!');
+            }
+        }
+    }
+
+
+    function onclickModalExecuteModule5Task4() {
+        fieldForInkResidue.style.display = "block";
+        let inputAmountOfInk = document.getElementById("input-amount-ink-module5-task4");
+        const selectedColor = document.getElementById("input-color-module5-task4").value;
+        const valueInputAmountOfInk = +document.getElementById("input-amount-ink-module5-task4").value;
+        const inputString = document.getElementById("input-string-module5-task4").value;
+
+        if (!valueInputAmountOfInk || !inputString || inputString.trim().length === 0) {
+            showAlert("error", "You haven't entered the required data! \nTry again.");
+            return;
+        }
+
+        const marker = new Marker(selectedColor, valueInputAmountOfInk);
+        marker.print(inputString);
+        inputAmountOfInk.value = marker.totalInk;
+        fieldForInkResidue.innerHTML = `Ink residue: ${marker.totalInk}%`;
+    }
+
+    function onclickForRefillModule5Task4() {
+        fieldForInkResidue.style.display = "block";
+        let inputAmountOfInk = document.getElementById("input-amount-ink-module5-task4");
+        const valueInputAmountOfInk = +document.getElementById("input-amount-ink-module5-task4").value;
+        const selectedColor = document.getElementById("input-color-module5-task4").value;
+        const inputString = document.getElementById("input-string-module5-task4").value;
+        const valueForRefillInk = document.getElementById("rangevalue-m5-t4").value;
+        const valueOfInk = +valueForRefillInk.replace(" %", "");
+
+        if (valueInputAmountOfInk < 0 || !inputString || inputString.trim().length === 0) {
+            showAlert("error", "You haven't entered the required data! \nTry again.");
+            return;
+        }
+
+        if (valueOfInk < 1) {
+            showAlert("warning", "You did not specify the amount of ink! \n Set the amount of ink again.");
+            return;
+        }
+
+        const markerForRefill = new RefillableMarker(selectedColor, valueInputAmountOfInk);
+
+
+        if (checkboxFullRefill.checked) {
+            markerForRefill.refill();
+            inputAmountOfInk.value = markerForRefill.totalInk;
+            console.log(`Marker is full: ${markerForRefill.totalInk}%`);
+            showAlert("success", `Marker is full: ${markerForRefill.totalInk}%`);
+            checkboxFullRefill.checked = false;
+            fieldForInkResidue.style.display = "none";
+        } else {
+            if (markerForRefill.totalInk > 0) {
+                const inkResidue = markerForRefill.totalInk;
+                console.log(`There is ink residue in the marker: ${inkResidue}%`);
+                markerForRefill.refillBy(valueOfInk);
+                console.log(`After filling, the marker has ${markerForRefill.totalInk}% ink`);
+                showAlert("info", `Before filling the ink, there were ${inkResidue}% inks in the marker. 
+                \n Now the marker has ${markerForRefill.totalInk}% ink`);
+                inputAmountOfInk.value = markerForRefill.totalInk;
+                fieldForInkResidue.innerHTML = `Ink residue: ${markerForRefill.totalInk}%`;
+            } else if (markerForRefill.totalInk === 0) {
+                markerForRefill.refillBy(valueOfInk);
+                console.log(`The marker is filled on: ${markerForRefill.totalInk}%`);
+                showAlert("success", `The marker is filled on: ${markerForRefill.totalInk}%`);
+                inputAmountOfInk.value = markerForRefill.totalInk;
+                fieldForInkResidue.innerHTML = `Ink residue: ${markerForRefill.totalInk}%`;
+            }
+        }
+    }
 }
+
+
 
 // Task 5
 function executeModule5Task5() {

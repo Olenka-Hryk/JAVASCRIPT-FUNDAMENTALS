@@ -96,6 +96,17 @@
     background-image: linear-gradient(-180deg, var(--btn-task-focus-color) 0%, var(--btn-task-focus-color) 100%);
 }
 
+.button--form-option {
+    background-image: linear-gradient(-180deg, var(--btn-task-first-color) 0%, var(--btn-task-second-color) 100%);
+    color: var(--module-background-color);
+    font-family: var(--font-family-accent-text);
+    font-size: var(--btn-modal-form-option-font-size);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 70px;
+    height: 40px;
+}
+
 
 @media (min-width: 500px) {
     .button {
@@ -111,5 +122,10 @@
         width: 80%;
         display: block;
         margin: 20px auto auto auto;
+    }
+
+    .button--form-option {
+        width: 70px;
+        height: 40px;
     }
 }
