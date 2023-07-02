@@ -61,6 +61,16 @@
     color: var(--font-color-accent-text);
 }
 
+.form__label-radio {
+    font-size: var(--modal-form-label-checkbox-font-size);
+    font-family: var(--font-family-accent-text);
+    color: var(--font-color-accent-text);
+}
+
+.form__label-option {
+    padding-top: 0px;
+}
+
 .form__input {
     background-color: var(--modal-form-background-color);
     font-size: var(--modal-form-input-font-size);
@@ -89,6 +99,10 @@
 }
 
 .form__input-range {
+    margin: 0.4rem;
+}
+
+.form__input-radio {
     margin: 0.4rem;
 }
 
@@ -167,6 +181,13 @@
     text-align: left;
 }
 
+.form__worker-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 ::placeholder {
     color: var(--placeholder-color);
     opacity: 1;
@@ -189,6 +210,13 @@
 
 @media (min-width: 660px) {
     .form__marker-container {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .form__worker-container  {
         margin-top: 10px;
         display: flex;
         flex-direction: row;

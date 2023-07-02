@@ -500,6 +500,7 @@ function executeModule5Task4() {
     containerForRefillRange.classList.add("form__marker-container-range");
     containerForRefill.appendChild(containerForRefillRange);
     renderRefillMarkerRange();
+
     renderRefillButton();
     renderFieldForInkResidue();
     renderPrintButton();
@@ -828,5 +829,419 @@ function executeModule5Task4() {
 
 // Task 5
 function executeModule5Task5() {
-    showAlert("info", "The script will be here soooooon");
+    const REGEXP_NUMBERS = /\d/;
+    const REGEXP_SYMBOLS = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    document.getElementById("modal").style.display = "block";
+    document.querySelector(".modal__name").innerHTML = "Class Worker:";
+    const container = document.querySelector(".modal__content");
+    renderDomModalElements();
+
+    const addNewWorkerButton = document.getElementById("add-new-worker-module5-task5");
+    const containerForSelectExperience = document.createElement("div");
+    containerForSelectExperience.id = "worker-container-for-experience";
+    containerForSelectExperience.classList.add("form__worker-container");
+    container.insertBefore(containerForSelectExperience, addNewWorkerButton);
+
+    const containerForInputExperience = document.createElement("div");
+    containerForInputExperience.id = "worker-container-for-input-experience";
+    containerForInputExperience.classList.add("form__worker-input-container");
+    container.insertBefore(containerForInputExperience, addNewWorkerButton);
+
+    const containerForDefaultExpRadio = document.createElement("div");
+    containerForDefaultExpRadio.id = "worker-container-for-default-experience";
+    containerForDefaultExpRadio.classList.add("form__worker-container-default-radio");
+    containerForSelectExperience.appendChild(containerForDefaultExpRadio);
+    renderSelectExperienceDefaultRadio();
+
+    const containerForNewExpRadio = document.createElement("div");
+    containerForNewExpRadio.id = "worker-container-for-new-experience";
+    containerForNewExpRadio.classList.add("form__worker-container-new-radio");
+    containerForSelectExperience.appendChild(containerForNewExpRadio);
+    renderSelectExperienceNewRadio();
+
+    const radioDefaultExperience = document.getElementById("worker-default-experience-module5-task5");
+    renderFieldInputNewExperience();
+    containerForInputExperience.style.display = "none";
+    radioDefaultExperience.checked = true;
+
+    renderFieldForListWorkers();
+    renderExecuteButton();
+
+    function onchangeForRadioDefaultExpModule5Task5() {
+        const fieldForSetNewExperienceWorker = document.getElementById("worker-field-for-new-experience-module5-task5");
+        containerForInputExperience.style.display = "none";
+        if (fieldForSetNewExperienceWorker) fieldForSetNewExperienceWorker.value = "";
+    };
+
+    function onchangeForRadioNewExpModule5Task5() {
+        containerForInputExperience.style.display = "block";
+    };
+
+    function renderDomModalElements() {
+        const listDomModalElement = [
+            {
+                element: "label",
+                for: "worker-fullname-module5-task5",
+                classList: "",
+                text: "Enter the first and last name of the worker:",
+            },
+            {
+                element: "input",
+                id: "worker-fullname-module5-task5",
+                placeholder: "Name Surname",
+                classList: "",
+                type: "text",
+            },
+            {
+                element: "label",
+                for: "worker-dayrate-module5-task5",
+                classList: "",
+                text: "Enter the rate per day of work:",
+            },
+            {
+                element: "input",
+                id: "worker-dayrate-module5-task5",
+                placeholder: "20",
+                classList: "",
+                type: "number",
+            },
+            {
+                element: "label",
+                for: "worker-workingdays-module5-task5",
+                classList: "",
+                text: "Enter the number of working days:",
+            },
+            {
+                element: "input",
+                id: "worker-workingdays-module5-task5",
+                placeholder: "23",
+                classList: "",
+                type: "number",
+            },
+            {
+                element: "button",
+                id: "add-new-worker-module5-task5",
+                classList: "button--form-tsk",
+                text: "Add a new worker",
+                onclick: () => { onclickAddNewWorkerModule5Task5(); },
+            },
+        ];
+        showFormElements(listDomModalElement, container);
+    }
+
+    function renderSelectExperienceDefaultRadio() {
+        const listDefaultExperienceElement = [
+            {
+                element: "input",
+                id: "worker-default-experience-module5-task5",
+                name: "worker-experience-module5-task5",
+                classList: "form__input-radio",
+                value: "1",
+                type: "radio",
+                onchange: () => { onchangeForRadioDefaultExpModule5Task5(); },
+            },
+            {
+                element: "label",
+                for: "worker-default-experience-module5-task5",
+                classList: "form__label-radio",
+                text: "Default experience (1.2)",
+            },
+        ];
+        showFormElements(listDefaultExperienceElement, containerForDefaultExpRadio);
+    }
+
+    function renderSelectExperienceNewRadio() {
+        const listNewExperienceElement = [
+            {
+                element: "input",
+                id: "worker-new-experience-module5-task5",
+                name: "worker-experience-module5-task5",
+                classList: "form__input-radio",
+                value: "2",
+                type: "radio",
+                onchange: () => { onchangeForRadioNewExpModule5Task5(); },
+            },
+            {
+                element: "label",
+                for: "worker-new-experience-module5-task5",
+                classList: "form__label-radio",
+                text: "Set new experience",
+            },
+        ];
+        showFormElements(listNewExperienceElement, containerForNewExpRadio);
+    }
+
+    function renderFieldInputNewExperience() {
+        const newExperienceElement = [
+            {
+                element: "label",
+                id: "worker-field-new-experience-module5-task5",
+                for: "worker-field-for-new-experience-module5-task5",
+                classList: "form__label-option",
+                text: "Enter new experience of the worker: ",
+            },
+            {
+                element: "input",
+                id: "worker-field-for-new-experience-module5-task5",
+                placeholder: "1.5",
+                classList: "",
+                type: "number",
+            },
+
+        ];
+        showFormElements(newExperienceElement, containerForInputExperience);
+    }
+
+    function renderFieldForListWorkers() {
+        document.querySelectorAll("#list-of-workers-module5-task5").forEach((e) => e.remove());
+        const fieldForListWorkersElement = [
+            {
+                element: "p",
+                id: "list-of-workers-module5-task5",
+                classList: "form__result--task-part",
+                text: "",
+            },
+        ];
+        showFormElements(fieldForListWorkersElement, container);
+    }
+
+    function renderFieldForResult() {
+        document.querySelectorAll("#result").forEach((e) => e.remove());
+        const resultDomElement = [
+            {
+                element: "p",
+                id: "result",
+                classList: "",
+                text: "",
+            },
+        ];
+        showFormElements(resultDomElement, container);
+    }
+
+    function renderFieldForOutputResult() {
+        document.querySelectorAll("#result-of-output-module5-task5").forEach((e) => e.remove());
+        const resultOfOutputDomElement = [
+            {
+                element: "p",
+                id: "result-of-output-module5-task5",
+                classList: "form__result--task-part",
+                text: "",
+            },
+        ];
+        showFormElements(resultOfOutputDomElement, container);
+    }
+
+    function renderRestartButton() {
+        document.querySelectorAll("#restart-module5-task5").forEach((e) => e.remove());
+        const restartButtonElement = [
+            {
+                element: "button",
+                id: "restart-module5-task5",
+                classList: "button--form-ex",
+                text: "Restart",
+                onclick: () => { onclickRestartModule5Task5(); },
+            },
+        ];
+        showFormElements(restartButtonElement, container);
+    }
+
+    function renderExecuteButton() {
+        document.querySelectorAll("#execute-module5-task5").forEach((e) => e.remove());
+        const executeButtonElement = [
+            {
+                element: "button",
+                id: "execute-module5-task5",
+                classList: "button--form-ex",
+                text: "Execute",
+                onclick: () => { onclickModalExecuteModule5Task5(); },
+            },
+        ];
+        showFormElements(executeButtonElement, container);
+    }
+
+
+    class Worker {
+        get fullName() {
+            return this._fullName;
+        }
+        set fullName(value) {
+            if (REGEXP_NUMBERS.test(value) || REGEXP_SYMBOLS.test(value)) throw new Error('Wrong input fullName');
+            this._fullName = value;
+        }
+
+        get dayRate() {
+            return this._dayRate;
+        }
+        set dayRate(value) {
+            if (value < 0) throw new Error('Wrong input dayRate');
+            this._dayRate = value;
+        }
+
+        get workingDays() {
+            return this._workingDays;
+        }
+        set workingDays(value) {
+            if (value < 0 || value > 365) throw new Error('The workingDays out of range');
+            this._workingDays = value;
+        }
+
+        get experience() {
+            return this.#experience;
+        }
+        set experience(value) {
+            this.#experience = value;
+        }
+
+        constructor(fullName, dayRate, workingDays) {
+            this.fullName = fullName;
+            this.dayRate = dayRate;
+            this.workingDays = workingDays;
+        }
+
+        #experience = 1.2;
+
+        getSalary(withExp = true) {
+            let salary = this.dayRate * this.workingDays;
+            return Math.round(withExp ? salary * this.experience : salary);
+        }
+
+        showSalary() {
+            return `${this.fullName} salary: ${this.getSalary(false)} $`;
+        }
+
+        showSalaryWithExperience() {
+            return `${this.fullName} salary with experience: ${this.getSalary(true)} $`;
+        }
+
+        toString() {
+            return `Worker (fullName: ${this.fullName}; dayRate: ${this.dayRate}; workingDays: ${this.workingDays})`;
+        }
+    }
+
+    let arrayWorkers = [];
+    function addNewWorker(fullName, dayRate, workingDays) {
+        const fieldForSetNewExperienceWorker = document.getElementById("worker-field-for-new-experience-module5-task5").value;
+        try {
+            const worker = new Worker(fullName, dayRate, workingDays);
+            if (fieldForSetNewExperienceWorker) {
+                worker.experience = +fieldForSetNewExperienceWorker;
+            }
+            arrayWorkers.push(worker);
+        } catch (error) {
+            showAlert("error", error.message);
+        }
+        return arrayWorkers;
+    }
+
+    function findWorkersWithHighestExp(arrayWorkers) {
+        const maxExp = Math.max(...arrayWorkers.map(worker => worker.experience));
+        return arrayWorkers.filter((worker) => worker.experience === maxExp);
+    }
+
+    function sortWorkersWithHighestExp(arrayWorkers) {
+        arrayWorkers.sort((a, b) => {
+            return a.getSalary() - b.getSalary();
+        });
+        return arrayWorkers;
+    }
+
+    function onclickAddNewWorkerModule5Task5() {
+        const fieldForOutputListWorkers = document.getElementById("list-of-workers-module5-task5");
+        const valueInputFullName = document.getElementById("worker-fullname-module5-task5").value;
+        const valueInputDayRate = document.getElementById("worker-dayrate-module5-task5").value;
+        const valueInputWorkingDays = document.getElementById("worker-workingdays-module5-task5").value;
+        fieldForOutputListWorkers.innerText = "";
+
+        if (!valueInputFullName || valueInputFullName.trim().length === 0 || !valueInputDayRate || !valueInputWorkingDays) {
+            showAlert("error", "You haven't entered the required data! \nTry again.");
+            return;
+        }
+
+        const arrayOfWorkers = addNewWorker(valueInputFullName, +valueInputDayRate, +valueInputWorkingDays);
+        console.info(arrayOfWorkers);
+        for (worker of arrayOfWorkers) {
+            fieldForOutputListWorkers.innerText += `${worker.toString()}\n`;
+        }
+    }
+
+    function onclickModalExecuteModule5Task5() {
+        renderFieldForResult();
+        renderFieldForOutputResult();
+        const executeButton = document.getElementById("execute-module5-task5");
+        const addNewWorkerButton = document.getElementById("add-new-worker-module5-task5");
+        const fieldForResult = document.getElementById("result");
+        const fieldForOutputResult = document.getElementById("result-of-output-module5-task5");
+        const fieldForSetNewExperienceWorker = document.getElementById("worker-field-for-new-experience-module5-task5").value;
+        const valueInputFullName = document.getElementById("worker-fullname-module5-task5").value;
+        const valueInputDayRate = document.getElementById("worker-dayrate-module5-task5").value;
+        const valueInputWorkingDays = document.getElementById("worker-workingdays-module5-task5").value;
+
+        if (!valueInputFullName || valueInputFullName.trim().length === 0 || !valueInputDayRate || !valueInputWorkingDays) {
+            showAlert("error", "You haven't entered the required data! \nTry again.");
+            return;
+        }
+
+        executeButton.remove();
+        addNewWorkerButton.style.display = "none";
+        fieldForResult.textContent = "Result:";
+
+        if (arrayWorkers.length === 0) {
+            arrayWorkers = addNewWorker(valueInputFullName, valueInputDayRate, valueInputWorkingDays);
+        }
+
+        for (worker of arrayWorkers) {
+            fieldForOutputResult.innerText += `${worker.fullName}\n`;
+            fieldForOutputResult.innerText += `${worker.showSalary()} \n`;
+            fieldForOutputResult.innerText += `New experience: ${worker.experience} \n`;
+            fieldForOutputResult.innerText += `${worker.showSalaryWithExperience()} \n`;
+            console.log(worker.fullName);
+            console.log(worker.showSalary());
+            console.log(`New experience: ${worker.experience}`);
+            console.log(worker.showSalaryWithExperience());
+            // worker.setExperience = 1.5;                   // if required by the condition of the task
+            fieldForOutputResult.innerText += `New experience: ${worker.experience} \n`;
+            fieldForOutputResult.innerText += `${worker.showSalaryWithExperience()} \n`;
+            fieldForOutputResult.innerHTML += "<br><br>";
+            console.log(`New experience: ${worker.experience}`);
+            console.log(worker.showSalaryWithExperience());
+            console.log("--------------------------");
+        }
+
+        fieldForOutputResult.innerText += "Sorted salary: \n";
+        console.log("Sorted salary:");
+        const arrayWorkersWithHighestExp = findWorkersWithHighestExp(arrayWorkers);
+        const arrayWorkersSortedBySalary = sortWorkersWithHighestExp(arrayWorkersWithHighestExp);
+        for (worker of arrayWorkersSortedBySalary) {
+            fieldForOutputResult.innerText += `${worker.fullName}: ${worker.getSalary()} $\n`;
+            console.log(`${worker.fullName}: ${worker.getSalary()} $`);
+        }
+
+        renderRestartButton();
+    }
+
+    function onclickRestartModule5Task5() {
+        const restartButton = document.getElementById("restart-module5-task5");
+        const addNewWorkerButton = document.getElementById("add-new-worker-module5-task5");
+        const fieldForResult = document.getElementById("result");
+        const fieldForOutputResult = document.getElementById("result-of-output-module5-task5");
+        const fieldForSetNewExperienceWorker = document.getElementById("worker-field-for-new-experience-module5-task5");
+        const fieldForOutputListWorkers = document.getElementById("list-of-workers-module5-task5");
+        const inputFullName = document.getElementById("worker-fullname-module5-task5");
+        const inputDayRate = document.getElementById("worker-dayrate-module5-task5");
+        const inputWorkingDays = document.getElementById("worker-workingdays-module5-task5");
+        renderExecuteButton();
+        addNewWorkerButton.style.display = "block";
+        radioDefaultExperience.checked = true;
+        containerForInputExperience.style.display = "none";
+        arrayWorkers = [];
+
+        restartButton.remove();
+        fieldForResult.remove();
+        if (fieldForOutputResult) fieldForOutputResult.remove();
+        if (fieldForOutputListWorkers) fieldForOutputListWorkers.innerHTML = "";
+        if (fieldForSetNewExperienceWorker) fieldForSetNewExperienceWorker.value = "";
+        inputFullName.value = "";
+        inputDayRate.value = "";
+        inputWorkingDays.value = "";
+    }
 }

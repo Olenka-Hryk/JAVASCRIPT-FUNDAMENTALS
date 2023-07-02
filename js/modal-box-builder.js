@@ -63,6 +63,17 @@ function addInput(elem, container) {
         input.type = elem.type;
         input.oninput = elem.oninput;
         container.appendChild(input);
+    } else if (elem.classList.includes("form__input-radio")) {
+        const input = document.createElement("input");
+        input.id = elem.id;
+        input.name = elem.name;
+        input.classList.add("form__input-radio");
+        input.value = elem.value;
+        input.type = elem.type;
+        input.addEventListener('click', () => {
+            elem.onchange();
+        });
+        container.appendChild(input);
     } else {
         const input = document.createElement("input");
         input.id = elem.id;
