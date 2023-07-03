@@ -246,8 +246,8 @@ function executeModule5Task1() {
             `[${isPointInCircle}] The dot (${coordValueX}, ${coordValueY}) does not fall into ${circle}`;
         console.log(isPointInCircle);
 
-        thirdPartOfResult.innerText += `\n Object in string: ${circle.toString()}`;
-        console.log(circle.toString());
+        thirdPartOfResult.innerText += `\n Object in string: ${circle}`;
+        console.log(circle);
     }
 }
 
@@ -1159,8 +1159,8 @@ function executeModule5Task5() {
 
         const arrayOfWorkers = addNewWorker(valueInputFullName, +valueInputDayRate, +valueInputWorkingDays);
         console.info(arrayOfWorkers);
-        for (worker of arrayOfWorkers) {
-            fieldForOutputListWorkers.innerText += `${worker.toString()}\n`;
+        for (const worker of arrayOfWorkers) {
+            fieldForOutputListWorkers.innerText += `${worker}\n`;
         }
     }
 
@@ -1171,7 +1171,6 @@ function executeModule5Task5() {
         const addNewWorkerButton = document.getElementById("add-new-worker-module5-task5");
         const fieldForResult = document.getElementById("result");
         const fieldForOutputResult = document.getElementById("result-of-output-module5-task5");
-        const fieldForSetNewExperienceWorker = document.getElementById("worker-field-for-new-experience-module5-task5").value;
         const valueInputFullName = document.getElementById("worker-fullname-module5-task5").value;
         const valueInputDayRate = document.getElementById("worker-dayrate-module5-task5").value;
         const valueInputWorkingDays = document.getElementById("worker-workingdays-module5-task5").value;
@@ -1189,7 +1188,7 @@ function executeModule5Task5() {
             arrayWorkers = addNewWorker(valueInputFullName, valueInputDayRate, valueInputWorkingDays);
         }
 
-        for (worker of arrayWorkers) {
+        for (const worker of arrayWorkers) {
             fieldForOutputResult.innerText += `${worker.fullName}\n`;
             fieldForOutputResult.innerText += `${worker.showSalary()} \n`;
             fieldForOutputResult.innerText += `New experience: ${worker.experience} \n`;
@@ -1211,7 +1210,7 @@ function executeModule5Task5() {
         console.log("Sorted salary:");
         const arrayWorkersWithHighestExp = findWorkersWithHighestExp(arrayWorkers);
         const arrayWorkersSortedBySalary = sortWorkersWithHighestExp(arrayWorkersWithHighestExp);
-        for (worker of arrayWorkersSortedBySalary) {
+        for (const worker of arrayWorkersSortedBySalary) {
             fieldForOutputResult.innerText += `${worker.fullName}: ${worker.getSalary()} $\n`;
             console.log(`${worker.fullName}: ${worker.getSalary()} $`);
         }

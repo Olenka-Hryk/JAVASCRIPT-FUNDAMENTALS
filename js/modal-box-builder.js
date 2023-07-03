@@ -1,26 +1,28 @@
 function showFormElements(arrayOfElements, block) {
     arrayOfElements.forEach((elem) => {
         if (elem.element === "label") {
-            addLabel(elem, block);
+            addTagLabel(elem, block);
         } else if (elem.element === "input") {
-            addInput(elem, block);
+            addTagInput(elem, block);
         } else if (elem.element === "p") {
-            addP(elem, block);
+            addTagP(elem, block);
         } else if (elem.element === "button") {
-            addButton(elem, block);
+            addTagButton(elem, block);
         } else if (elem.element === "select") {
-            addSelect(elem, block);
+            addTagSelect(elem, block);
         } else if (elem.element === "option") {
-            addOption(elem, block);
+            addTagOption(elem, block);
         } else if (elem.element === "textarea") {
-            addTextarea(elem, block);
+            addTagTextarea(elem, block);
         } else if (elem.element === "output") {
-            addOutput(elem, block);
+            addTagOutput(elem, block);
+        } else if (elem.element === "a") {
+            addTagA(elem, block);
         }
     });
 }
 
-function addLabel(elem, container) {
+function addTagLabel(elem, container) {
     if (elem.classList.includes("form__label-checkbox")) {
         const label = document.createElement("label");
         label.setAttribute("for", elem.for);
@@ -38,7 +40,7 @@ function addLabel(elem, container) {
     }
 }
 
-function addInput(elem, container) {
+function addTagInput(elem, container) {
     if (elem.classList.includes("form__input-color")) {
         const input = document.createElement("input");
         input.id = elem.id;
@@ -85,7 +87,7 @@ function addInput(elem, container) {
     }
 }
 
-function addOutput(elem, container) {
+function addTagOutput(elem, container) {
     const output = document.createElement("output");
     output.id = elem.id;
     output.setAttribute("for", elem.for);
@@ -94,7 +96,7 @@ function addOutput(elem, container) {
     container.appendChild(output);
 }
 
-function addP(elem, container) {
+function addTagP(elem, container) {
     if (elem.classList.includes("form__result--task")) {
         const p = document.createElement("p");
         p.id = elem.id;
@@ -119,7 +121,7 @@ function addP(elem, container) {
     }
 }
 
-function addButton(elem, container) {
+function addTagButton(elem, container) {
     const button = document.createElement("button");
     button.id = elem.id;
     button.type = "button";
@@ -130,7 +132,7 @@ function addButton(elem, container) {
     container.appendChild(button);
 }
 
-function addSelect(elem, container) {
+function addTagSelect(elem, container) {
     const select = document.createElement("select");
     select.id = elem.id;
     select.classList.add("form__select");
@@ -138,7 +140,7 @@ function addSelect(elem, container) {
     container.appendChild(select);
 }
 
-function addOption(elem, container) {
+function addTagOption(elem, container) {
     const option = document.createElement("option");
     option.id = elem.id;
     if (elem.classList) option.classList.add(elem.classList);
@@ -147,13 +149,24 @@ function addOption(elem, container) {
     container.appendChild(option);
 }
 
-function addTextarea(elem, container) {
+function addTagTextarea(elem, container) {
     const textarea = document.createElement("textarea");
     textarea.id = elem.id;
     textarea.rows = elem.rows;
-    textarea.cols = textarea.cols;
+    textarea.cols = elem.cols;
     textarea.setAttribute("placeholder", elem.placeholder);
     textarea.classList.add("form__textarea");
     if (elem.classList) textarea.classList.add(elem.classList);
     container.appendChild(textarea);
+}
+
+function addTagA(elem, container) {
+    const a = document.createElement("a");
+    a.setAttribute("href", elem.href);
+    a.target = elem.target;
+    a.id = elem.id;
+    a.classList.add("form__a-link-new-tab");
+    if (elem.classList) a.classList.add(elem.classList);
+    a.textContent = elem.textContent;
+    container.appendChild(a);
 }
