@@ -1,0 +1,35 @@
+@import url(/css/style.css);
+
+.header__module6-task4 {
+    margin-bottom: 120px;
+}
+
+.output-text{
+    font-family: var(--font-family-accent-text);
+    color: var(--modal-form-background-color);
+    font-size: var(--modal-form-label-checkbox-font-size);
+}
+
+.array {
+    width: 550px;
+    margin: 0 auto;
+}
+
+input {
+    display: block;
+    margin-top: 10px;
+    width: 250px;
+}
+
+.out {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 10px 0;
+    font-size: 25px;
+    word-wrap: break-word;
+    color: white;
+    background-color: green;
+}

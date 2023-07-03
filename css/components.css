@@ -107,6 +107,15 @@
     height: 40px;
 }
 
+.button--task-ex-new-page {
+    width: 100%;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: var(--module-background-color);
+    background-image: linear-gradient(-180deg, var(--btn-task-first-color) 0%, var(--btn-task-second-color) 100%);
+}
+
 
 @media (min-width: 500px) {
     .button {
@@ -122,6 +131,12 @@
         width: 80%;
         display: block;
         margin: 20px auto auto auto;
+    }
+
+    .button--task-ex-new-page {
+        width: 30%;
+        display: block;
+        margin: auto;
     }
 
     .button--form-option {
