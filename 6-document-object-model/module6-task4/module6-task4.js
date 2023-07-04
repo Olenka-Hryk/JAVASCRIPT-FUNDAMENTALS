@@ -1,6 +1,10 @@
 // реалізувати вивід даних із полів при кліку на кнопку "Надіслати" в поле outBlock
 const REGEXP_NUMBERS = /\d/;
 const REGEXP_SYMBOLS = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+const REGEXP_EMAIL = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+const REGEXP_PHONE = /^[0-9\+]{1,}[0-9\-]{3,15}$/;
+
+const CURRENT_YEAR = new Date().getFullYear();
 
 const btnSubmit = document.querySelector('input[type="submit"]');
 const outContainer = document.querySelector('.out');
@@ -15,7 +19,7 @@ class User {
         return this._fullName;
     }
     set fullName(value) {
-        if (REGEXP_NUMBERS.test(value) || REGEXP_SYMBOLS.test(value)) throw new Error('Wrong input fullName');
+        if (!value || REGEXP_NUMBERS.test(value) || REGEXP_SYMBOLS.test(value)) throw new Error('Wrong input fullName');
         this._fullName = value;
     }
 
@@ -23,7 +27,7 @@ class User {
         return this._mobileNumber;
     }
     set mobileNumber(value) {
-        if (!value) throw new Error('Wrong input mobileNumber');
+        if (!value || !REGEXP_PHONE.test(value)) throw new Error('Wrong input mobileNumber');
         this._mobileNumber = value;
     }
 
@@ -31,7 +35,7 @@ class User {
         return this._birthDay;
     }
     set birthDay(value) {
-        if (!value) throw new Error('Wrong input birthDay');
+        if (!value || new Date(value).getFullYear() > CURRENT_YEAR) throw new Error('Wrong input birthDay');
         this._birthDay = value;
     }
 
@@ -39,7 +43,7 @@ class User {
         return this._email;
     }
     set email(value) {
-        if (!value) throw new Error('Wrong input email');
+        if (!value || !REGEXP_EMAIL.test(value)) throw new Error('Wrong input email');
         this._email = value;
     }
 

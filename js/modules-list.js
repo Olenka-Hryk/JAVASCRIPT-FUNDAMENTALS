@@ -265,19 +265,19 @@ const MODULES = [
         id: "4",
         nameTask: "Data output from fields: ",
         descriptionTask:
-          "https://codepen.io/misha_klymenko/pen/Jjabvez <br>Реалізувати вивід даних із полів при кліку на кнопку <code>'Надіслати'</code> в поле <code>outBlock</code>",
+          "https://codepen.io/<wbr>misha_klymenko/<wbr>pen/Jjabvez <br>Реалізувати вивід даних із полів при кліку на кнопку <code>'Надіслати'</code> в поле <code>outBlock</code>",
       },
       {
         id: "5",
         nameTask: "Circle: ",
         descriptionTask:
-          "https://codepen.io/misha_klymenko/pen/abzLvqo <br> <code>1)</code> вибрати всі теги із класом circle <br><code>2)</code> перебрати кожен елемент, і вибрати його data-anim значення <br><code>3)</code> вибране значення додати як клас за допомогою classList до цього елемента <br><code>4)</code> перевірити чи застосувались анімації <br><br>  - вибірка елемента із DOM дерева <br> - вибрати клас елемента (https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) <br> - вибрати із data атрибута значення і занести те значення в клас елемента для якого ми вибрали поточний атрибут",
+          "https://codepen.io/<wbr>misha_klymenko/<wbr>pen/abzLvqo <br> <code>1)</code> вибрати всі теги із класом circle <br><code>2)</code> перебрати кожен елемент, і вибрати його data-anim значення <br><code>3)</code> вибране значення додати як клас за допомогою classList до цього елемента <br><code>4)</code> перевірити чи застосувались анімації <br><br>  - вибірка елемента із DOM дерева <br> - вибрати клас елемента (https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) <br> - вибрати із data атрибута значення і занести те значення в клас елемента для якого ми вибрали поточний атрибут",
       },
       {
         id: "6",
         nameTask: "Calculate the price of the product: ",
         descriptionTask:
-          "https://codepen.io/misha_klymenko/pen/dyjyeGO <br>Реалізувати логіку підрахунку ціни товару по його варіаціях (шаблон наведений тут, при кліку на колір змінювати ціну товару). Придумати ще 2 варіації, від яких буде залежати ціна товару.",
+          "https://codepen.io/<wbr>misha_klymenko/<wbr>pen/dyjyeGO <br>Реалізувати логіку підрахунку ціни товару по його варіаціях (шаблон наведений тут, при кліку на колір змінювати ціну товару). Придумати ще 2 варіації, від яких буде залежати ціна товару.",
       },
       {
         id: "6",
