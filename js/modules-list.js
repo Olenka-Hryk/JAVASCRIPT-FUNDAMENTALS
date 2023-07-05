@@ -286,5 +286,61 @@ const MODULES = [
           "Зробити електронний годинник у такому стилі. <br>http://surl.li/ipjll",
       }
     ],
+  },
+  {
+    id: "browser-object-model-events",
+    chapter: "7",
+    name: "7. BROWSER OBJECT MODEL (BOM). EVENTS",
+    numberOfTasks: "8",
+    tasks: [
+      {
+        id: "1",
+        nameTask: "Object Window: ",
+        descriptionTask:
+          "За допомогою методів об’єкта <code>window</code> створити: <br><code>1)</code> нове вікно розміром <var>300х300</var> пікселів. <br><code>2)</code> із затримкою 2 сек змініть розміри вікна на <var>500х500</var> пікселів <br><code>3)</code> із затримкою 2 сек перемістіть вікно в точку з координатами <var>(200, 200)</var> <br><code>4)</code> із затримкою 2 сек закрийте вікно.",
+      },
+      {
+        id: "2",
+        nameTask: "Change CSS: ",
+        descriptionTask:
+          "Для заданої HTML-сторінки:<br> <code><pre style='overflow:auto'>&lt;p id ='text'&gt;I learning JavaScript events!&lt;/p&gt;<br>       &lt;div&gt;<br>         &lt;button . . . . . &gt;Change style!&lt;/button&gt;<br>      &lt;/div&gt;</pre></code><br> Hапишіть функцію <code>changeCSS()</code>, яка спрацьовуватиме по кліку на кнопку і змінюватиме стиль вмісту тега <code>&lt;p&gt;</code>: колір шрифту – <var>оранжевий</var>, розмір шрифту <var>20px</var>, шрифт сімейства <var>'Comic Sans MS'</var>.",
+      },
+      {
+        id: "3",
+        nameTask: "Events: ",
+        descriptionTask:
+          "Задано сторінку з 3 кнопками і 1 лінкою. Напишіть Javascript код і реалізуйте HTML-сторінку з відповідними подіями на кожному елементові: <br><code>1)</code> 1-ша кнопка – при кліку на неї колір фону сторінки міняється на <var>синій</var> <br><code>2)</code> 2-га кнопка – при подвійному кліку на неї колір фону сторінки міняється на <var>рожевий</var> <br><code>3)</code> 3-я кнопка – при натисненні і утримуванні кнопки колір фону сторінки стає <var>коричневий</var>. При відпусканні – <var>білий</var>. <br><code>4)</code> При наведенні на лінку – колір фону стає <var>жовтим</var>, при відведенні – <var>білим</var>. <br>Приклад – курсор наведений на лінку: <br>https://user-images.<wbr>githubusercontent.<wbr>com/9075641<wbr>/228461056-455d4dbf<wbr>-527b-43de-a3dd-<wbr>7c079dfbffed<wbr>.png",
+      },
+      {
+        id: "4",
+        nameTask: "Delete a list item: ",
+        descriptionTask:
+          "Реалізуйте програму, яка по натисканню на кнопку видалятиме обраний елемент випадаючого списку. Можуть видалятися всі елементи в будь-якому порядку.<br>https://user-images.<wbr>githubusercontent<wbr>.com/9075641/228462160<wbr>-e0584c12-eb4a-<wbr>4973-b598-46e1cde9b941<wbr>.png",
+      },
+      {
+        id: "5",
+        nameTask: "Show me message where I am! ",
+        descriptionTask:
+          "Реалізуйте програму, яка по натисканню на кнопку виводитиме повідомлення <var>'I was pressed!'</var>, при наведенні на кнопку виводитиме повідомлення <var>'Mouse on me!'</var>, а при відведенні курсора миші виводитиме повідомлення <var>'Mouse is not on me!'</var>. <br>Приклад роботи: <br>https://user-images.<wbr>githubusercontent.com<wbr>/9075641/228462490<wbr>-a2ec423a-44e3-<wbr>40f5-9c0a-7e9d207f2822<vbr>.png",
+      },
+      {
+        id: "6",
+        nameTask: "Width and height of the browser window: ",
+        descriptionTask:
+          "Реалізуйте програму, яка відслідковуватиме зміну розміру (<var>ширини</var> і <var>висоти</var>) вікна браузера і виводитиме на поточну сторінку при її розтязі/стисканні відповідні значення. <br> https://user-images.<wbr>githubusercontent.com<wbr>/9075641/228463011<wbr>-5302f615-86e6-41dc-<wbr>b09a-62bed3564596.png",
+      },
+      {
+        id: "7",
+        nameTask: "Drop down lists: ",
+        descriptionTask:
+          "На сторінці потрібно реалізувати 2 випадаючих списки. У першому містяться <var>назви країн</var>, у другому – <var>назви міст</var>. Реалізувати роботу таким чином, щоб коли вибирається з лівого випадаючого списку певна країна - в правому випадаючому  списку з'являлися міста цієї країни. Список міст формується динамічно, через JavaScript. Також потрібно нижче вивести назву обраної країни і місто. Код HTML-сторінки:<br> <code><pre style='overflow:auto'>  &lt;select name='country' id='country'&gt;<br>       &lt;option value='ger'&gt;Germany&lt;/option&gt;<br>       &lt;option value='usa'&gt;USA&lt;/option&gt;<br>       &lt;option value='ukr'&gt;Ukraine&lt;/option&gt;<br>  &lt;/select&gt;<br>  &lt;select name='cities' id='cities'&gt;&lt;/select&gt;<br>  &lt;p&gt;&lt;/p&gt;</pre></code><br> https://user-images.<wbr>githubusercontent.com<wbr>/9075641/228463508-<wbr>6225f4ee-7ad2-4130-b7fc-<wbr>d97a2d236693.png",
+      },
+      {
+        id: "8",
+        nameTask: "&#10025; &#10025; &#10025; Dinogame",
+        descriptionTask:
+          "Придумайте просту гру з використанням цих спрайтів. На 2-3 дії користувача. (кліки миші, натискання клавіш). Наприклад: вибір персонажа, стрибок. <br>https://user-images.github<wbr>usercontent.com/9075641<wbr>/184331849-6cc33681-dcdf<wbr>-4eef-830b-83fc43056e19.png",
+      }
+    ],
   }
 ];
