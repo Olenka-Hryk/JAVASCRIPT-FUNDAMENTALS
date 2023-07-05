@@ -43,21 +43,21 @@ function addTagLabel(elem, container) {
 function addTagInput(elem, container) {
     if (elem.classList.includes("form__input-color")) {
         const input = document.createElement("input");
-        input.setAttribute("id", elem.id);;
+        input.setAttribute("id", elem.id);
         input.classList.add("form__input-color");
         input.value = elem.value;
         input.type = elem.type;
         container.appendChild(input);
     } else if (elem.classList.includes("form__input-checkbox")) {
         const input = document.createElement("input");
-        input.setAttribute("id", elem.id);;
+        input.setAttribute("id", elem.id);
         input.classList.add("form__input-checkbox");
         input.type = elem.type;
         input.onchange = elem.onchange;
         container.appendChild(input);
     } else if (elem.classList.includes("form__input-range")) {
         const input = document.createElement("input");
-        input.setAttribute("id", elem.id);;
+        input.setAttribute("id", elem.id);
         input.classList.add("form__input-range");
         input.value = elem.value;
         input.min = elem.min;
