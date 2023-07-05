@@ -80,7 +80,7 @@ btnSubmit.addEventListener('click', () => {
     }
 
     // =-=-=-=-=-=-=-=-=- another way =-=-=-=-=-=-=-=-=-
-    // const userArray = Array.from(document.querySelectorAll('.arr'));
+    // const userArray = [...document.querySelectorAll('.arr')];
     // for (const user of userArray) {
     //     console.log(user.value);
     // }

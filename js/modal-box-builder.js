@@ -31,7 +31,7 @@ function addTagLabel(elem, container) {
         container.appendChild(label);
     } else {
         const label = document.createElement("label");
-        if (elem.id) label.id = elem.id;
+        if (elem.id) label.setAttribute("id", elem.id);
         label.setAttribute("for", elem.for);
         label.classList.add("main-text", "form__label");
         if (elem.classList) label.classList.add(elem.classList);
@@ -43,21 +43,21 @@ function addTagLabel(elem, container) {
 function addTagInput(elem, container) {
     if (elem.classList.includes("form__input-color")) {
         const input = document.createElement("input");
-        input.id = elem.id;
+        input.setAttribute("id", elem.id);;
         input.classList.add("form__input-color");
         input.value = elem.value;
         input.type = elem.type;
         container.appendChild(input);
     } else if (elem.classList.includes("form__input-checkbox")) {
         const input = document.createElement("input");
-        input.id = elem.id;
+        input.setAttribute("id", elem.id);;
         input.classList.add("form__input-checkbox");
         input.type = elem.type;
         input.onchange = elem.onchange;
         container.appendChild(input);
     } else if (elem.classList.includes("form__input-range")) {
         const input = document.createElement("input");
-        input.id = elem.id;
+        input.setAttribute("id", elem.id);;
         input.classList.add("form__input-range");
         input.value = elem.value;
         input.min = elem.min;
@@ -67,7 +67,7 @@ function addTagInput(elem, container) {
         container.appendChild(input);
     } else if (elem.classList.includes("form__input-radio")) {
         const input = document.createElement("input");
-        input.id = elem.id;
+        input.setAttribute("id", elem.id);
         input.name = elem.name;
         input.classList.add("form__input-radio");
         input.value = elem.value;
@@ -78,7 +78,7 @@ function addTagInput(elem, container) {
         container.appendChild(input);
     } else {
         const input = document.createElement("input");
-        input.id = elem.id;
+        input.setAttribute("id", elem.id);
         input.setAttribute("placeholder", elem.placeholder);
         input.classList.add("accent-text", "form__input");
         if (elem.classList) input.classList.add(elem.classList);
@@ -89,7 +89,7 @@ function addTagInput(elem, container) {
 
 function addTagOutput(elem, container) {
     const output = document.createElement("output");
-    output.id = elem.id;
+    output.setAttribute("id", elem.id);
     output.setAttribute("for", elem.for);
     if (elem.classList) output.classList.add(elem.classList);
     output.value = elem.value;
@@ -99,21 +99,21 @@ function addTagOutput(elem, container) {
 function addTagP(elem, container) {
     if (elem.classList.includes("form__result--task")) {
         const p = document.createElement("p");
-        p.id = elem.id;
+        p.setAttribute("id", elem.id);
         p.classList.add("accent-text", "form__result");
         if (elem.classList) p.classList.add(elem.classList);
         p.innerHTML = elem.text;
         container.appendChild(p);
     } else if (elem.classList.includes("form__result--task-part")) {
         const p = document.createElement("p");
-        p.id = elem.id;
+        p.setAttribute("id", elem.id);
         p.classList.add("accent-text", "form__result");
         if (elem.classList) p.classList.add(elem.classList);
         p.innerHTML = elem.text;
         container.appendChild(p);
     } else {
         const p = document.createElement("p");
-        p.id = elem.id;
+        p.setAttribute("id", elem.id);
         p.classList.add("accent-text", "form__result", "form__result--total");
         if (elem.classList) p.classList.add(elem.classList);
         p.innerHTML = elem.text;
@@ -123,7 +123,7 @@ function addTagP(elem, container) {
 
 function addTagButton(elem, container) {
     const button = document.createElement("button");
-    button.id = elem.id;
+    button.setAttribute("id", elem.id);
     button.type = "button";
     button.classList.add("button");
     if (elem.classList) button.classList.add(elem.classList);
@@ -134,7 +134,7 @@ function addTagButton(elem, container) {
 
 function addTagSelect(elem, container) {
     const select = document.createElement("select");
-    select.id = elem.id;
+    select.setAttribute("id", elem.id);
     select.classList.add("form__select");
     if (elem.classList) select.classList.add(elem.classList);
     container.appendChild(select);
@@ -142,7 +142,7 @@ function addTagSelect(elem, container) {
 
 function addTagOption(elem, container) {
     const option = document.createElement("option");
-    option.id = elem.id;
+    option.setAttribute("id", elem.id);
     if (elem.classList) option.classList.add(elem.classList);
     option.value = elem.value;
     option.innerHTML = elem.text;
@@ -151,7 +151,7 @@ function addTagOption(elem, container) {
 
 function addTagTextarea(elem, container) {
     const textarea = document.createElement("textarea");
-    textarea.id = elem.id;
+    textarea.setAttribute("id", elem.id);
     textarea.rows = elem.rows;
     textarea.cols = elem.cols;
     textarea.setAttribute("placeholder", elem.placeholder);
@@ -164,7 +164,7 @@ function addTagA(elem, container) {
     const a = document.createElement("a");
     a.setAttribute("href", elem.href);
     a.target = elem.target;
-    a.id = elem.id;
+    a.setAttribute("id", elem.id);
     a.classList.add("form__a-link-new-tab");
     if (elem.classList) a.classList.add(elem.classList);
     a.textContent = elem.textContent;
