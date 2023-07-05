@@ -315,7 +315,7 @@ const MODULES = [
         id: "4",
         nameTask: "Delete a list item: ",
         descriptionTask:
-          "Реалізуйте програму, яка по натисканню на кнопку видалятиме обраний елемент випадаючого списку. Можуть видалятися всі елементи в будь-якому порядку.<br>https://user-images.<wbr>githubusercontent<wbr>.com/9075641/228462160<wbr>-e0584c12-eb4a-<wbr>4973-b598-46e1cde9b941<wbr>.png",
+          "Реалізуйте програму, яка по натисканню на кнопку видалятиме обраний елемент випадаючого списку. Можуть видалятися всі елементи в будь-якому порядку.<br>https://user-images.githubuser<wbr>content.com/9075641<wbr>/228462160-e0584c12<wbr>-eb4a-4973-b598-<wbr>46e1cde9b941.png",
       },
       {
         id: "5",
@@ -327,19 +327,19 @@ const MODULES = [
         id: "6",
         nameTask: "Width and height of the browser window: ",
         descriptionTask:
-          "Реалізуйте програму, яка відслідковуватиме зміну розміру (<var>ширини</var> і <var>висоти</var>) вікна браузера і виводитиме на поточну сторінку при її розтязі/стисканні відповідні значення. <br> https://user-images.<wbr>githubusercontent.com<wbr>/9075641/228463011<wbr>-5302f615-86e6-41dc-<wbr>b09a-62bed3564596.png",
+          "Реалізуйте програму, яка відслідковуватиме зміну розміру (<var>ширини</var> і <var>висоти</var>) вікна браузера і виводитиме на поточну сторінку при її розтязі/стисканні відповідні значення. <br> https://user-images.githubuser<wbr>content.com/9075641<wbr>/228463011-5302f615-86e6<wbr>-41dc-b09a-62bed3564596.png",
       },
       {
         id: "7",
         nameTask: "Drop down lists: ",
         descriptionTask:
-          "На сторінці потрібно реалізувати 2 випадаючих списки. У першому містяться <var>назви країн</var>, у другому – <var>назви міст</var>. Реалізувати роботу таким чином, щоб коли вибирається з лівого випадаючого списку певна країна - в правому випадаючому  списку з'являлися міста цієї країни. Список міст формується динамічно, через JavaScript. Також потрібно нижче вивести назву обраної країни і місто. Код HTML-сторінки:<br> <code><pre style='overflow:auto'>  &lt;select name='country' id='country'&gt;<br>       &lt;option value='ger'&gt;Germany&lt;/option&gt;<br>       &lt;option value='usa'&gt;USA&lt;/option&gt;<br>       &lt;option value='ukr'&gt;Ukraine&lt;/option&gt;<br>  &lt;/select&gt;<br>  &lt;select name='cities' id='cities'&gt;&lt;/select&gt;<br>  &lt;p&gt;&lt;/p&gt;</pre></code><br> https://user-images.<wbr>githubusercontent.com<wbr>/9075641/228463508-<wbr>6225f4ee-7ad2-4130-b7fc-<wbr>d97a2d236693.png",
+          "На сторінці потрібно реалізувати 2 випадаючих списки. У першому містяться <var>назви країн</var>, у другому – <var>назви міст</var>. Реалізувати роботу таким чином, щоб коли вибирається з лівого випадаючого списку певна країна - в правому випадаючому  списку з'являлися міста цієї країни. Список міст формується динамічно, через JavaScript. Також потрібно нижче вивести назву обраної країни і місто. Код HTML-сторінки:<br> <code><pre style='overflow:auto'>  &lt;select name='country' id='country'&gt;<br>       &lt;option value='ger'&gt;Germany&lt;/option&gt;<br>       &lt;option value='usa'&gt;USA&lt;/option&gt;<br>       &lt;option value='ukr'&gt;Ukraine&lt;/option&gt;<br>  &lt;/select&gt;<br>  &lt;select name='cities' id='cities'&gt;&lt;/select&gt;<br>  &lt;p&gt;&lt;/p&gt;</pre></code><br> https://user-images.githubuser<wbr>content.com/9075641<wbr>/228463508-6225f4ee-7ad2<wbr>-4130-b7fc-d97a2d236693.png",
       },
       {
         id: "8",
         nameTask: "&#10025; &#10025; &#10025; Dinogame",
         descriptionTask:
-          "Придумайте просту гру з використанням цих спрайтів. На 2-3 дії користувача. (кліки миші, натискання клавіш). Наприклад: вибір персонажа, стрибок. <br>https://user-images.github<wbr>usercontent.com/9075641<wbr>/184331849-6cc33681-dcdf<wbr>-4eef-830b-83fc43056e19.png",
+          "Придумайте просту гру з використанням цих спрайтів. На 2-3 дії користувача. (кліки миші, натискання клавіш). Наприклад: вибір персонажа, стрибок. <br>https://user-images.githubuser<wbr>content.com/9075641<wbr>/184331849-6cc33681-dcdf<wbr>-4eef-830b-83fc43056e19.png",
       }
     ],
   }
