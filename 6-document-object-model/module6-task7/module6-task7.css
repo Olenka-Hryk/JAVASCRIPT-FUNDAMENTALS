@@ -1,0 +1,71 @@
+@import url(../../css/style.css);
+@import url("https://fonts.cdnfonts.com/css/seven-segment");
+@import url("https://fontlibrary.org//face/segment7");
+
+
+.header__module6-task7 {
+    margin-bottom: 150px;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    height: 250px;
+    background: #3f3e3e15;
+    max-width: 550px;
+    border-radius: 500px;
+}
+
+#date {
+    font-family: "Seven Segment", sans-serif;
+    color: var(--alert-warning-color);
+    font-size: 15px;
+    padding-left: 65px;
+}
+
+#clock {
+    font-family: 'Segment7Standard';
+    color: var(--alert-warning-color);
+    font-size: 50px;
+    text-align: center;
+}
+
+#colon {
+    font-family: "Seven Segment", sans-serif;
+    font-size: 130px;
+    line-height: 6px;
+}
+
+@media (min-width: 400px) {
+    #date {
+        font-size: 15px;
+        padding-left: 98px;
+    }
+
+    #clock {
+        font-size: 80px;
+    }
+
+    #colon {
+        font-size: 180px;
+        line-height: 6px;
+    }
+}
+
+@media (min-width: 600px) {
+    #date {
+        font-size: 25px;
+        padding-left: 65px;
+    }
+
+    #clock {
+        font-size: 100px;
+    }
+
+    #colon {
+        font-size: 230px;
+        line-height: 6px;
+    }
+}
