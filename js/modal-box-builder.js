@@ -142,7 +142,7 @@ function addTagSelect(elem, container) {
 
 function addTagOption(elem, container) {
     const option = document.createElement("option");
-    option.setAttribute("id", elem.id);
+    if (elem.id) option.setAttribute("id", elem.id);
     if (elem.classList) option.classList.add(elem.classList);
     option.value = elem.value;
     option.innerHTML = elem.text;
