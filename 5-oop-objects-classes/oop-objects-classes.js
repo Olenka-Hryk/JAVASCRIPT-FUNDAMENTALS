@@ -274,7 +274,7 @@ function executeModule5Task2() {
                 rows: "10",
                 cols: "50",
                 placeholder: `{\n"course":"JS fundamental", \n"duration":3, \n"direction":"web-development" \n}`,
-                classList: "",
+                classList: "textarea--form",
             },
             {
                 element: "button",
@@ -565,7 +565,7 @@ function executeModule5Task4() {
                 rows: "8",
                 cols: "50",
                 placeholder: "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.",
-                classList: "",
+                classList: "textarea--form",
             },
         ];
         showFormElements(listDomModalElement, container);

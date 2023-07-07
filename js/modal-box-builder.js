@@ -155,8 +155,9 @@ function addTagTextarea(elem, container) {
     textarea.rows = elem.rows;
     textarea.cols = elem.cols;
     textarea.setAttribute("placeholder", elem.placeholder);
-    textarea.classList.add("form__textarea");
+    textarea.classList.add("textarea");
     if (elem.classList) textarea.classList.add(elem.classList);
+    if (elem.readOnly) textarea.readOnly;
     container.appendChild(textarea);
 }
 

@@ -162,18 +162,6 @@
     border: var(--modal-select-border);
 }
 
-.form__textarea {
-    background-color: var(--modal-form-background-color);
-    font-size: var(--modal-form-input-font-size);
-    line-height: var(--modal-form-input-line-height);
-    letter-spacing: var(--modal-form-input-letter-spacing);
-    padding-left: 5px;
-    outline: none;
-    resize: none;
-    border-style: none;
-    border-radius: var(--modal-form-textarea-border-radius);
-}
-
 .form__marker-container {
     margin-top: 10px;
     display: flex;

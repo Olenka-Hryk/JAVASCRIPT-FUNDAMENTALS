@@ -1,5 +1,5 @@
 const totalCountCities = document.getElementById("totalCountCities");
-const listDeletedCities = document.querySelector(".textarea-module7-task4");
+const listDeletedCities = document.getElementById("textarea-module7-task4");
 const btnDeleteCity = document.getElementById("btnChooseDeleteCity");
 
 renderSelectElement();

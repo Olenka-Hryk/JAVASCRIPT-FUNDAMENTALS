@@ -22,24 +22,6 @@
     text-align: center;
 }
 
-.textarea-module7-task4 {
-    background: transparent;
-    color: var(--font-color-main-text);
-    font-size: 16px !important;
-    font-family: var(--font-family-main-text);
-    letter-spacing: var(--modal-form-input-letter-spacing);
-    text-align: center;
-    float: left;
-    width: 100%;
-    min-height: 100%;
-    padding-left: 5px;
-    overflow: auto;
-    outline: none;
-    resize: none;
-    border-style: none;
-    border-radius: var(--modal-form-textarea-border-radius);
-}
-
 
 @media (min-width: 480px) {
     .select-module7-task4 {
@@ -50,10 +32,6 @@
 @media (min-width: 500px) {
     .select-module7-task4 {
         font-size: 18px;
-    }
-
-    .textarea-module7-task4 {
-        font-size: 20px !important;
     }
 }
 
@@ -68,10 +46,6 @@
 
     .button--events {
         height: 70px;
-    }
-
-    .textarea-module7-task4 {
-        font-size: 26px !important;
     }
 }
 
