@@ -6,5 +6,5 @@ document.getElementById("btnMakeBackBlue").onclick = () => changeBackground("blu
 document.getElementById("btnMakeBackPink").ondblclick = () => changeBackground("pink");
 document.getElementById("btnMakeBackBrown").onmousedown = () => changeBackground("brown");
 document.getElementById("btnMakeBackBrown").onmouseup = () => changeBackground("white");
-document.getElementById("linkMakeBackYellow").onmouseenter = () => changeBackground("yellow");
-document.getElementById("linkMakeBackYellow").onmouseleave = () => changeBackground("white");
+document.getElementById("linkMakeBackYellow").onmouseover = () => changeBackground("yellow");
+document.getElementById("linkMakeBackYellow").onmouseout = () => changeBackground("white");

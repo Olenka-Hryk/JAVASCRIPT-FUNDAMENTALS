@@ -1,0 +1,23 @@
+@import url(../../css/style.css);
+
+.header__module7-task5 {
+    margin-bottom: 150px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #ef44446d;
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
