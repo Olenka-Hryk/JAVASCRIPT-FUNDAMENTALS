@@ -342,5 +342,55 @@ const MODULES = [
           "Придумайте просту гру з використанням цих спрайтів. На 2-3 дії користувача. (кліки миші, натискання клавіш). Наприклад: вибір персонажа, стрибок. <br>https://user-images.githubuser<wbr>content.com/9075641<wbr>/184331849-6cc33681-dcdf<wbr>-4eef-830b-83fc43056e19.png",
       }
     ],
+  },
+  {
+    id: "regular-expressions-memory",
+    chapter: "8",
+    name: "8. REGULAR EXPRESSIONS. MEMORY MANAGEMENT",
+    numberOfTasks: "7",
+    tasks: [
+      {
+        id: "1",
+        nameTask: "Uppercase: ",
+        descriptionTask:
+          "Напишіть функцію, яка перевірятиме чи перший символ в рядку написаний в верхньому регістрі, чи ні. <br>Приклад роботи:<br><code>upperCase('regexp'); // 'String's not starts with uppercase character' <br>upperCase('RegExp'); // 'String's starts with uppercase character'</code>",
+      },
+      {
+        id: "2",
+        nameTask: "Check email: ",
+        descriptionTask:
+          "Напишіть функцію, яка приймає рядкові дані і виконує перевірку на їх відповідність емейлу. Валідними вважаються всі символи на різних позиціях. <br>Приклад роботи: <br> <code>checkEmail('Qmail2@gmail.com'); true </code>",
+      },
+      {
+        id: "3",
+        nameTask: "Switch places: ",
+        descriptionTask:
+          "Напишіть регулярний вираз, який в рядковому тексті 2 підстрічки буде міняти місцями. <br>Приклад роботи: <br> Вхідний рядок: <code>'Java Script'</code> <br>Вихід: <code>'Script, Java</code>",
+      },
+      {
+        id: "4",
+        nameTask: "Credit card: ",
+        descriptionTask:
+          "Напишіть функцію, яка виконуватиме валідацію номера банківської карти (9999-9999-9999-9999).",
+      },
+      {
+        id: "5",
+        nameTask: "Email validation: ",
+        descriptionTask:
+          "Напишіть функцію, яка приймає рядкові дані і виконує перевірку на їх відповідність емейлу. <br>Вимоги:<br>&#9900; Цифри <var>(0-9)</var>. <br>&#9900; Тільки латинські літери в великому <var>(A-Z)</var> і малому <var>(a-z)</var> регістрах. <br>&#9900; В тілі емейла допустимі лише символи “_” і “-”. Але вони не можуть бути 1-им символом емейлу. <br>&#9900; Символ “-” не може повторюватися. <br> <code>checkEmail('my_mail@gmail.com'); 'Email is correct!' <br> checkEmail('#my_mail@gmail.com'); 'Email is not correct!' <br> checkEmail('my_ma--il@gmail.com'); 'Email is not correct!'",
+      },
+      {
+        id: "6",
+        nameTask: "Login validation: ",
+        descriptionTask:
+          "Напишіть функцію, яка перевіряє правильність логіна. Правильний логін - рядок від <var>2</var> до <var>10</var> символів, що містить лише <var>букви</var> та <var>числа</var>, номер не може бути першим. Функція має приймати рядок і знаходити усі числа в цьому рядку, включаючи числа з плаваючою комою (наприклад, 3.4). <br> Приклад роботи:<br> <code>checkLogin('ee1.1ret3'); true //1.1, 3  <br> checkLogin('ee1*1ret3'); false //1, 1, 3 </code>",
+      },
+      {
+        id: "7",
+        nameTask: "&#10025; &#10025; &#10025; Form validation: ",
+        descriptionTask:
+          "Додайте перевірку на кожне поле даних в формі https://codepen.io/misha_klymenko/pen/rNZKodW?editors=1000",
+      }
+    ],
   }
 ];
