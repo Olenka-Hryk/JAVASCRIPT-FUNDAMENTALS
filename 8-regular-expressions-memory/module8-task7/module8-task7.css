@@ -1,0 +1,17 @@
+@import url(../../css/style.css);
+
+body {
+    background-color: transparent !important;
+}
+
+.header__module8-task7 {
+    margin-bottom: 150px;
+}
+
+input:invalid {
+    border: 3px solid red;
+}
+
+.valid {
+    background-color: rgba(102, 199, 247, 0.494);
+}

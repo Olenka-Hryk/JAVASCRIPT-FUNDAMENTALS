@@ -359,7 +359,7 @@ const MODULES = [
         id: "2",
         nameTask: "Check email: ",
         descriptionTask:
-          "Напишіть функцію, яка приймає рядкові дані і виконує перевірку на їх відповідність емейлу. Валідними вважаються всі символи на різних позиціях. <br>Приклад роботи: <br> <code>checkEmail('Qmail2@gmail.com'); true </code>",
+          "Напишіть функцію, яка приймає рядкові дані і виконує перевірку на їх відповідність емейлу. Валідними вважаються всі символи на різних позиціях. <br>Приклад роботи: <br> <code>checkEmail<wbr>('Qmail2@gmail.com'); true </code>",
       },
       {
         id: "3",
@@ -377,7 +377,7 @@ const MODULES = [
         id: "5",
         nameTask: "Email validation: ",
         descriptionTask:
-          "Напишіть функцію, яка приймає рядкові дані і виконує перевірку на їх відповідність емейлу. <br>Вимоги:<br>&#9900; Цифри <var>(0-9)</var>. <br>&#9900; Тільки латинські літери в великому <var>(A-Z)</var> і малому <var>(a-z)</var> регістрах. <br>&#9900; В тілі емейла допустимі лише символи “_” і “-”. Але вони не можуть бути 1-им символом емейлу. <br>&#9900; Символ “-” не може повторюватися. <br> <code>checkEmail('my_mail@gmail.com'); 'Email is correct!' <br> checkEmail('#my_mail@gmail.com'); 'Email is not correct!' <br> checkEmail('my_ma--il@gmail.com'); 'Email is not correct!'",
+          "Напишіть функцію, яка приймає рядкові дані і виконує перевірку на їх відповідність емейлу. <br>Вимоги:<br>&#9900; Цифри <var>(0-9)</var>. <br>&#9900; Тільки латинські літери в великому <var>(A-Z)</var> і малому <var>(a-z)</var> регістрах. <br>&#9900; В тілі емейла допустимі лише символи “_” і “-”. Але вони не можуть бути 1-им символом емейлу. <br>&#9900; Символ “-” не може повторюватися. <br> <code>checkEmail('my_mail@gmail.<wbr>com'); 'Email is correct!' <br> checkEmail('#my_mail@gmail.<wbr>com'); 'Email is not correct!' <br> checkEmail('my_ma--il@gmail.<wbr>com'); 'Email is not correct!'",
       },
       {
         id: "6",
@@ -389,7 +389,7 @@ const MODULES = [
         id: "7",
         nameTask: "&#10025; &#10025; &#10025; Form validation: ",
         descriptionTask:
-          "Додайте перевірку на кожне поле даних в формі https://codepen.io/misha_klymenko/pen/rNZKodW?editors=1000",
+          "Додайте перевірку на кожне поле даних в формі https://codepen.io/misha_klymenko/<wbr>pen/rNZKodW?editors=1000",
       }
     ],
   }
