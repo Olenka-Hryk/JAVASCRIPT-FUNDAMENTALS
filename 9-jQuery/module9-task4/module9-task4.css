@@ -1,0 +1,13 @@
+@import url(../../css/style.css);
+
+.header__module9-task4 {
+    margin-bottom: 150px;
+}
+
+.checkbox-wrapper {
+    padding-left: 15%;
+    display: grid;
+    grid-template-columns: repeat(2, 90px);
+    grid-auto-rows: 30px;
+    grid-gap: 15px;
+}

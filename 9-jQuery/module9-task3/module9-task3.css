@@ -1,0 +1,21 @@
+@import url(../../css/style.css);
+
+.header__module9-task3 {
+    margin-bottom: 200px;
+}
+
+.wrapper {
+    padding-left: 50px;
+}
+
+.head-module9-task3 {
+    font-size: 25px;
+    line-height: normal;
+}
+
+
+@media (min-width: 600px) {
+    .wrapper {
+        padding-left: 100px;
+    }
+}

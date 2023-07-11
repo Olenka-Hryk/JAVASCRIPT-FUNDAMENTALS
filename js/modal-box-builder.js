@@ -53,7 +53,7 @@ function addTagInput(elem, container) {
         input.setAttribute("id", elem.id);
         input.classList.add("form__input-checkbox");
         input.type = elem.type;
-        input.onchange = elem.onchange;
+        if (elem.onchange) input.onchange = elem.onchange;
         container.appendChild(input);
     } else if (elem.classList.includes("form__input-range")) {
         const input = document.createElement("input");
