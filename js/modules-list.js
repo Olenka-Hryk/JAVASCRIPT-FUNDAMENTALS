@@ -392,5 +392,37 @@ const MODULES = [
           "Додайте перевірку на кожне поле даних в формі https://codepen.io/misha_klymenko/<wbr>pen/rNZKodW?editors=1000",
       }
     ],
+  },
+  {
+    id: "jQuery",
+    chapter: "9",
+    name: "9. JQUERY",
+    numberOfTasks: "4",
+    tasks: [
+      {
+        id: "1",
+        nameTask: "Find and stylize the elements: ",
+        descriptionTask:
+          "Для заданої сторінки знайдіть всі <code>&lt;h2&gt;</code> з класом <code>head</code>, зробіть для них <var>зелений колір фону</var>, потім серед знайдених елементів знайдіть елементи з класом <code>inner</code> і поставте їм <var>розмір шрифту 35px</var>. <br> <code>&lt;h2 class='head'&gt; header1 &lt;/h2&gt; <br>&lt;h2 class='head'&gt; header2 &lt;span class='inner'&gt; inner elem1 &lt;/span&gt;&lt;/h2&gt; <br>&lt;h2&gt; header3 &lt;/h2&gt; <br>&lt;h2 class='head'&gt; header4 &lt;span&gt; inner elem2 &lt;/span&gt;&lt;/h2&gt; <br>&lt;h2&gt;header5&lt;/h2&gt; </code>",
+      },
+      {
+        id: "2",
+        nameTask: "Open in a new tab: ",
+        descriptionTask:
+          "На HTML-сторінці є посилання <code>&lt;a&gt;</code>. У випадку коли, <code>href</code> починається на <code>https://</code>, потрібно додати посиланню атрибут <code>target='_blank'</code>.",
+      },
+      {
+        id: "3",
+        nameTask: "Move tags: ",
+        descriptionTask:
+          "Знайдіть теги <code>&lt;div&gt;</code>, які стоять безпосередньо після <code>&lt;h3&gt;</code> і перемістіть кожен <code>&lt;div&gt;</code> - елемент так, щоб він став безпосередньо над <code>&lt;h3&gt;</code>. <br> <code>&lt;h3&gt;header1&lt;/h3&gt; <br> &lt;div&gt;text1&lt;/div&gt; <br>&lt;h3&gt;header2&lt;/h3&gt; <br> &lt;div&gt;text2&lt;/div&gt; </code>",
+      },
+      {
+        id: "4",
+        nameTask: "Deactivate the checkboxes: ",
+        descriptionTask:
+          "На HTML-сторінці є <var>6 чекбоксів</var>. Напишіть скріпт, який після того, як користувач позначив будь-які 3 чекбокси, всі чекбокси робить неактивними.",
+      }
+    ],
   }
 ];
