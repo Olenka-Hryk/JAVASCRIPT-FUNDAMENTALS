@@ -424,5 +424,49 @@ const MODULES = [
           "На HTML-сторінці є <var>6 чекбоксів</var>. Напишіть скріпт, який після того, як користувач позначив будь-які 3 чекбокси, всі чекбокси робить неактивними.",
       }
     ],
+  },
+  {
+    id: "ecmascript-es6",
+    chapter: "10",
+    name: "10. ECMASCRIPT 2015 (ES6)",
+    numberOfTasks: "6",
+    tasks: [
+      {
+        id: "1",
+        nameTask: "Complete the code snippet: ",
+        descriptionTask:
+          "Напишіть код в / Ваш код /, щоб він працював <br><code><pre style='overflow:auto'>let names = {<br>      first: 'Tom',<br>      second: 'Sam',<br>      third: 'Ray',<br>      fourth: 'Bob', <br>};<br><br>let {/* Ваш код */} = names; <br><br>console.log(f); // 'Tom'<br>console.log(x); // 'Ray'<br>console.log(fifth); // 'Name №5' </pre></code>",
+      },
+      {
+        id: "2",
+        nameTask: "Complete the code snippet: ",
+        descriptionTask:
+          "Напишіть код в / Ваш код /, щоб він працював <br><code><pre style='overflow:auto'>let data = {<br>     names: ['Sam', 'Tom', 'Ray', 'Bob'],<br>     ages: [20, 24, 22, 26],<br>};<br><br>let /* Ваш код */ = data;<br>console.log(name2); // 'Tom'<br>console.log(age2); // 24<br>console.log(name4); // 'Bob'<br>console.log(age4); // 26</pre></code>",
+      },
+      {
+        id: "3",
+        nameTask: "Return the product of Numbers: ",
+        descriptionTask:
+          "Напишіть функцію <code>mul()</code>, яка приймає будь-яку кількість параметрів різного типу і повертає добуток параметрів типу <code>Number</code>. Якщо параметри типу <code>Number</code> відсутні, повертає число <code>0</code>. <br><br><code><pre style='overflow:auto'>function mul(/* ваш код */) {<br>    // Ваш код <br>}<br>console.log(mul(1, 'str', 2, 3, true)); // 6<br>console.log(mul(null, 'str', false, true)); // 0</pre></code>",
+      },
+      {
+        id: "4",
+        nameTask: "Create Map from the elements of two arrays: ",
+        descriptionTask:
+          "Напишіть функцію <code>mapBuilder (keysArray, valuesArrays)</code>, яка приймає два масиви однакової довжини. Використовуючи ці масиви, функція повинна створювати об'єкт типу <code>Map</code>, ключами якого є значення з першого масиву, а значеннями <code>Map</code> - значення з другого масиву. Після цього функція повертає даний об'єкт <code>Map</code>. Приклади використання: <br> <code style='overflow:auto'><br>let keys = [1, 2, 3, 4]; <br>let values = ['div', 'span', 'b', 'i']; <br>let map = mapBuilder(keys, values); <br>console.log(map.size); // 4 <br>console.log(map.get(2)); // 'span'</code>",
+      },
+      {
+        id: "5",
+        nameTask: "Fix a code snippet: ",
+        descriptionTask:
+          "За допомгою коду у нижче створюється масив, використовуючи цикл, до масиву записуються три функції. Логіка функцій проста, в консоль виводиться значення лічильника на момент створення функції. На вигляд код виглядає логічним, але, якщо запустити цей код без змін, в консоль буде виведено двічі число 3. Використовуючи механізм замикання, внесіть у код зміни, щоб у консоль вивелися число <var>0</var> та число <var>2</var> (відповідно до виклику). <br><code><pre style='overflow:auto'><br>var arr = [];<br>for (var i = 0; i <= 2; i++) {<br>  arr[i] = function () {<br>    console.log(i);<br>  };<br>}<br>arr[0](); // 0<br>arr[arr.length - 1](); // 2</pre></code>",
+      },
+      {
+        id: "6",
+        nameTask: "&#10025; &#10025; &#10025; Arrow functions: ",
+        descriptionTask:
+          "Змініть код використовуючи стрілкові функції, щоб в коді не використовувалися методи <code>bind().</code> <br><code><pre style='overflow:auto'>let server = {<br>    data: 0,<br>    convertToString: function (callback) {<br>       callback((function () {<br>          return this.data + '';<br>       }).bind(this));<br>    }<br>};<br>let client = {<br>    server: server,<br>    result: '',<br>    calc: function (data) {<br>     this.server.data = data;<br>     this.server.convertToString(this.notification());<br>},<br>  notification: function () {<br>    return (function (callback) {<br>      this.result = callback();<br>    }).bind(this);<br>  }<br>};<br>client.calc(123);<br>console.log(client.result); // '123'<br>console.log(typeof client.result); // 'string'</pre></code>",
+      }
+    ],
   }
 ];
