@@ -1,0 +1,17 @@
+{
+  "name": "javascript-fundamentals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "m12t1": "node 12-node-js/module12-task1.js",
+    "m12t2": "node 12-node-js/module12-task2.js",
+    "m12t3": "node 12-node-js/module12-task3.js"
+  },
+  "author": "Olenka Hryk",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
