@@ -468,5 +468,57 @@ const MODULES = [
           "Змініть код використовуючи стрілкові функції, щоб в коді не використовувалися методи <code>bind().</code> <br><code><pre style='overflow:auto'>let server = {<br>    data: 0,<br>    convertToString: function (callback) {<br>       callback((function () {<br>          return this.data + '';<br>       }).bind(this));<br>    }<br>};<br>let client = {<br>    server: server,<br>    result: '',<br>    calc: function (data) {<br>     this.server.data = data;<br>     this.server.convertToString(this.notification());<br>},<br>  notification: function () {<br>    return (function (callback) {<br>      this.result = callback();<br>    }).bind(this);<br>  }<br>};<br>client.calc(123);<br>console.log(client.result); // '123'<br>console.log(typeof client.result); // 'string'</pre></code>",
       }
     ],
+  },
+  {
+    id: "asynchronous",
+    chapter: "11",
+    name: "11. ASYNCHRONOUS JS",
+    numberOfTasks: "3",
+    tasks: [
+      {
+        id: "1",
+        nameTask: "Get promise: ",
+        descriptionTask:
+          "Реалізуйте функцію <code>getPromise(message, delay)</code>, яка приймає текстове повідомлення <code>message</code> і цілочисельне значення затримки <code>delay</code> (в мс) і повертає <code>Promise</code>, який чекає задану кількість часу (використовуючи аргумент <code>delay</code> ) і завершується повідомленням <code>message</code>. Приклад застосування функції: <br><code><pre style='overflow:auto'>getPromise('test promise', 2000)<br>   .then(function(data) {<br>      console.log(data); <br>});</pre></code><br>Результат: через <var>2 сек</var> в консолі виводиться <var>'test promise'</var>",
+      },
+      {
+        id: "2",
+        nameTask: "Return the product of the array elements: ",
+        descriptionTask:
+          "Реалізуйте функцію <code>calcArrProduct(arr)</code>, яка приймає масив чисел. Функція повинна повернути <code>Promise</code>, робота якого завершується поверненням добутку елементів масиву, якщо вони є типу <code>Numbers</code>, або повідомленням <code>'Error! Incorrect array!'</code> у випадку, якщо хоча б 1 елемент масиву нечисловий. Приклад застосування функції: <br><code><pre style='overflow:auto'>calcArrProduct([3,4,5])<br>   .then(result => console.log(result)); // 60<br>calcArrProduct([5,'user2', 7, 12])<br>   .then(result => console.log(result)); // 'Error! Incorrect array!'</pre></code>",
+      },
+      {
+        id: "3",
+        nameTask: "Output the entered number: ",
+        descriptionTask:
+          "Створіть наступний асинхронний ланцюжок <code>promise</code>:<br><code><pre style='overflow:auto'>new Promise(function (resolve, reject) {</pre></code>  // Запитуємо у користувача number за допомогою prompt()<br>  // Якщо користувач ввів не число - викликаємо reject()<br>  // Якщо користувач ввів число - викликаємо resolve(number)<br><code><pre style='overflow:auto'> }).catch(function (error) {<br>  return new Promise(function (resolve, reject) {</pre></code>  // Запитуємо у користувача number, до тих пір, поки він його не введе<br>  // Після вводу числа - викликаємо resolve(number)<br><code><pre style='overflow:auto'>  });<br>}).then(function (result) {</pre></code>  // Вивід number у консоль<br><code><pre style='overflow:auto'>});</pre></code>",
+      }
+    ],
+  },
+  {
+    id: "node-js",
+    chapter: "12",
+    name: "12. NODE.JS INTRODUCTION",
+    numberOfTasks: "3",
+    tasks: [
+      {
+        id: "1",
+        nameTask: "Create a Node.js http-server: ",
+        descriptionTask:
+          "Створити <code>Node.js</code> http-сервер, який слухатиме запити на порт <var>5000</var> на локальній  машині. Сервер повинен повертати сторінку, що містить ім’я поточного користувача операційної системи, тип операційної системи, час роботи системи в хвилинах (використати <code>модуль OS</code> ), поточну робочу директорію і назву файлу сервера (використати <code>модуль path</code> ).",
+      },
+      {
+        id: "2",
+        nameTask: "Create your own module: ",
+        descriptionTask:
+          "Необхідно створити власний модуль <code>personalmodule.js</code>, який містить функцію, що приймає <var>ім’я системного юзера</var> і працює з поточним часом та на основі пори доби виводить повідомлення із привітанням юзера. Щоб експортувати змінні чи функції модуля на зовні можна використати об’єкт <code>module.exports</code>.<br>Створіть Node.js сервер, який з використанням функціоналу розробленого модуля повертатиме наступну сторінку:",
+      },
+      {
+        id: "3",
+        nameTask: "&#10025; &#10025; &#10025; Write text information to the file: ",
+        descriptionTask:
+          "Створіть просту програму на <code>Node.js</code>, яка записує у файл текстову інформацію, яку користувач вводить з адресного рядка, а потім зчитує цей файл та виводить вміст на екран.<br>Кроки:<br>&#9900; Створити змінну, яка зберігатиме шлях до файлу, у який буде записана інформація. <br>&#9900; Використовуючи модуль <code>fs (file system)</code>, створити функцію, яка дозволить записувати інформацію в файл. <br>&#9900; Використовуючи модуль <code>http</code>, створити сервер, який буде прослуховувати запити з адресного рядка та передавати отриману інформацію функції <code>writeToTextFile().</code> <br>&#9900; Для зчитування даних з файлу, використовуйте модуль <code>fs</code> та функцію <code>readFile()</code> <br>&#9900; Для того, щоб вивести зчитану інформацію на екран, додайте відповідну логіку до серверу.*",
+      }
+    ],
   }
 ];
