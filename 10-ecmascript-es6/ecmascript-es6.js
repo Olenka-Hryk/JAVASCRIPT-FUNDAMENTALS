@@ -25,7 +25,7 @@ function executeModule10Task2() {
         ages: [20, 24, 22, 26],
     };
 
-    let { names: [name1, name2, name3, name4], ages: [age1, age2, age3, age4] } = data;
+    let { names: [, name2, , name4], ages: [, age2, , age4] } = data;
 
 
     console.log(name2); // "Tom"
@@ -226,16 +226,26 @@ function executeModule10Task4() {
 
 // Task 5
 function executeModule10Task5() {
-    let arr = [];
-
+    var arr = [];
     for (let i = 0; i <= 2; i++) {
         arr[i] = function () {
             console.log(i);
         };
     }
-
     arr[0](); // 0
     arr[arr.length - 1](); // 2
+
+    // another way:
+    // var arr = [];
+    // for (var i = 0; i <= 2; i++) {
+    //     arr[i] = (function (i) {
+    //         return function() {
+    //             console.log(i);
+    //         }
+    //     })(i);
+    // }
+    // arr[0](); // 0
+    // arr[arr.length - 1](); // 2
 }
 
 
