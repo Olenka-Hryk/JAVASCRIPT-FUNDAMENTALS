@@ -1,0 +1,22 @@
+@import url(../../css/style.css);
+
+.header__module13-task2 {
+    margin-bottom: 50px;
+}
+
+.button-m13-t2 {
+    width: 350px;
+}
+
+.list_items {
+    margin:  5em;
+}
+
+@media (min-width: 700px) {
+    .list_items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

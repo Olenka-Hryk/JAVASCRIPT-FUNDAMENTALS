@@ -6,11 +6,13 @@
   "scripts": {
     "m12t1": "node 12-node-js/module12-task1.js",
     "m12t2": "node 12-node-js/module12-task2.js",
-    "m12t3": "node 12-node-js/module12-task3.js"
+    "m12t3": "node 12-node-js/module12-task3.js",
+    "m13": "node 13-ajax/server.js"
   },
   "author": "Olenka Hryk",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "nodemon": "^3.0.1"
   }
